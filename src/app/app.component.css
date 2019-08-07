@@ -1,0 +1,19 @@
+.modtitle{
+    color: blueviolet;
+    font-size: 25px;
+    text-align: center;
+}
+
+.modbody{
+    color: dodgerblue;
+    text-align: center;
+}
+
+.modal-content{
+    background-color: black;
+}
+
+.tabbody{
+    text-align: center;
+    margin-top: 10px;
+}
