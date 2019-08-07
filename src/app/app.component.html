@@ -1,21 +1,336 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+		<!-- Header -->
+    <header id="header" style="background-color: transparent;">
+      <div class="logo"><img src="assets/styles/images/logo.png" id="logo"></div>
+      <a href="#menu"><span>Menu</span></a>
+    </header>
+
+  <!-- Nav -->
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="#one" class="more">Pune</a></li>
+        <li><a href="#two">Chandigarh</a></li>
+        <li><a href="#stage">Chandigarh(Stage Play)</a></li>
+        <li><a href="#three">Delhi</a></li>
+        <li><a href="#four">Jaipur</a></li>
+        <li><a href="#five">Nagpur</a></li>
+        <li><a href="#six">Mumbai</a></li>
+      </ul>
+    </nav>
+
+  <!-- Banner -->
+  <!--
+    Note: To show a background image, set the "data-bg" attribute below
+    to the full filename of your image. This is used in each section to set
+    the background image.
+  -->
+    <section id="banner" class="bg-img" data-bg="../assets/styles/images/main.jpg">
+      <div class="inner" style="transform: translate(0%,-35%)">
+        <header>
+          <h1>Mood Indigo Multicity Eliminations</h1>
+          <a target="_blank" href="https://moodi.org/register" class="button alt" style="
+          transform: translate(0%,20vh);
+          width: 50%;
+          border: 0.5px solid darkgrey;"
+          >Get your MI-number</a>
+        </header>
+      </div>
+      <a href="#one" class="more">Learn More</a>
+    </section>
+
+  <!-- One -->
+  <!--Indigo Saga, Beat the Street, MI Idol, Aagaaz, Humor Us-->
+    <section id="one" class="wrapper post bg-img" data-bg="../assets/styles/images/Pune.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Pune</h2>
+            <p>30.09.2018</p>
+          </header>
+          
+          <div class="container-fluid" style="width: 100%">
+            <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Indigo_Saga" class="button alt">Indigo Saga</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Beat_the_Street" class="button alt">Beat the Street</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/MI_Idol" class="button alt">MI Idol</a>
+              </div>
+            </div>
+            <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Aagaaz" class="button alt">Aagaaz</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Hysteria" class="button alt">Hysteria</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Speaking_Arts/Humor_Us" class="button alt">Humor Us</a>
+              </div>
+            </div>
+          </div>
+          
+        </article>
+      </div>
+      <a href="#two" class="more">Learn More</a>
+    </section>
+
+  <!-- Two -->
+  <!--MI Idol, Singing the Indigos​, Aagaaz, Desi Beats, Rangeela, Mood-ling, Humor Us, Sanskriti-->
+    <section id="two" class="wrapper post bg-img" data-bg="../assets/styles/images/Chandigarh.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Chandigarh</h2>
+            <p style="margin-bottom: 0px;">26.10.2018 - 28.10.2018</p>
+            <img src="../assets/styles/images/Pecfest_Chandigarh.png" class="venue">
+            <p style="margin-bottom: 0px;">PECFEST 2018</p>
+            <p>PEC, Chandigarh</p>
+          </header>
+          <div class="container-fluid" style="width: 100%">
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/MI_Idol" class="button alt">MI Idol</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Singing_The_Indigos" class="button alt">Singing the Indigos</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Desi_Beats" class="button alt">Desi Beats</a>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Fine_Arts/Rangeela" class="button alt">Rangeela</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Fine_Arts/Mood-ling" class="button alt">Mood-ling</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/" class="button alt">Sanskriti</a>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Aagaaz" class="button alt">Aagaaz</a>
+                
+              </div>
+              <div class="col-sm-4">
+                
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Speaking_Arts/Humor_Us" class="button alt">Humor Us</a>
+                
+              </div><div class="col-sm-2"></div>
+          </div>
+        </div>
+        </article>
+      </div>
+    </section>
+    <!--section id="stage" class="wrapper post bg-img" data-bg="Stage.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Chandigarh(Stage Play)</h2>
+            <p style="margin-bottom: 0px;">5.10.2018 - 6.10.2018</p>
+            <img src="images/rangrez.png" class="venue">
+            <p style="margin-bottom: 0px;">Rangrez 2018</p>
+            <p>Chitkara University, Chandigarh</p>
+          </header>
+          <div class="container-fluid" style="width: 100%">
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Third_Bell" class="button alt">Third Bell</a>
+              </div>
+              <div class="col-sm-4">
+              </div>
+          </div>
+          
+        </div>
+        </article>
+      </div>
+    </section-->
+
+  <!-- Three -->
+  <!--Desi Beats, Indigo Saga, Beat the Street, MI Idol, Singing the Indigos, Aagaaz, Humor Us, Sanskriti-->
+    <section id="three" class="wrapper post bg-img" data-bg="../assets/styles/images/Delhi.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Delhi</h2>
+            <p>6.10.2018</p>
+          </header>
+          <div class="container-fluid" style="width: 100%">
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/MI_Idol" class="button alt">MI Idol</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Singing_The_Indigos" class="button alt">Singing the Indigos</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Desi_Beats" class="button alt">Desi Beats</a>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Beat_the_Street" class="button alt">Beat the Street</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Hysteria" class="button alt">Hysteria</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/" class="button alt">Sanskriti</a>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Aagaaz" class="button alt">Aagaaz</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Speaking_Arts/Humor_Us" class="button alt">Humor Us</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Indigo_Saga" class="button alt">Indigo Saga</a>
+              </div>
+          </div>
+        </div>
+        </article>
+      </div>
+      <a href="#four" class="more">Learn More</a>
+    </section>
+
+  <!-- Four -->
+  <!--Desi Beats, Aagaaz, MI Idol, Humor Us-->
+    <section id="four" class="wrapper post bg-img" data-bg="../assets/styles/images/Jaipur.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Jaipur</h2>
+            <p style="margin-bottom: 0px;">20.10.2018 - 21.10.2018</p>
+            <img src="../assets/styles/images/Jaipur_Oneiros.jpg" class="venue">
+            <p style="margin-bottom: 0px;">Onerios 2018</p>
+            <p>Manipal University, Jaipur</p>
+          </header>
+          
+          <div class="container-fluid" style="width: 100%">
+            <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Aagaaz" class="button alt">Aagaaz</a>
+                
+              </div>
+              <div class="col-sm-4">
+                
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Desi_Beats" class="button alt">Desi Beats</a>
+                
+            </div><div class="col-sm-2"></div>
+          </div>
+            <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/MI_Idol" class="button alt">MI-Idol</a>
+                
+              </div>
+              <div class="col-sm-4">
+                
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Speaking_Arts/Humor_Us" class="button alt">Humor Us</a>
+                
+            </div><div class="col-sm-2"></div>
+          </div></div>
+        </article>
+      </div>
+    </section>
+    <!--Nagpur-->
+    <!--Mantra, Aagaz-->
+    <section id="five" class="wrapper post bg-img" data-bg="../assets/styles/images/Nagpur.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Nagpur</h2>
+            <p style="margin-bottom: 0px;">20.10.2018 - 21.10.2018</p>
+            <img src="../assets/styles/images/Aarohi_Nagpur.png" class="venue">
+            <p style="margin-bottom: 0px;">Aarohi 2018</p>
+            <p>VNIT, Nagpur</p>
+          </header>
+          <div class="container-fluid" style="width: 100%">
+            <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Aagaaz" class="button alt">Aagaaz</a>
+              </div>
+              <div class="col-sm-4">
+                <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Mantra" class="button alt">Mantra</a>
+            </div><div class="col-sm-2"></div>
+          </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--Mumbai-->
+    <!--Desi Beats, Indigo Saga, Beat the street, MI Idol, Singing the Indigos, Aagaaz, Humor Us-->
+    <section id="six" class="wrapper post bg-img" data-bg="../assets/styles/images/Mumbai.jpg">
+      <div class="inner">
+        <article class="box">
+          <header>
+            <h2>Mumbai</h2>
+            
+          </header>
+          
+          <div class="container-fluid" style="width: 100%">
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/MI_Idol" class="button alt">MI Idol</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Indigo_Saga" class="button alt">Indigo Saga</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Desi_Beats" class="button alt">Desi Beats</a>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dramatics/Aagaaz" class="button alt">Aagaaz</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Dance/Beat_the_Street" class="button alt">Beat the Street</a>
+              </div>
+              <div class="col-sm-4">
+                  <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Singing_The_Indigos" class="button alt">Singing the Indigos</a>
+              </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <a target="_blank" href="https://moodi.org/competitions?sub=/Speaking_Arts/Humor_Us" class="button alt">Humor Us</a>
+            </div>
+            <div class="col-sm-4">
+              <a target="_blank" href="https://moodi.org/competitions?sub=/Music/Hysteria" class="button alt">Hysteria</a>
+            </div>
+          </div>
+          
+        </div>
+        </article>
+      </div>
+    </section>
+
+  <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="icons">
+          <li><a target="_blank" href="https://www.twitter.com/iitb_moodi" class="icon round fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a target="_blank" href="https://www.facebook.com/iitb.moodindigo/" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/company/mood-indigo/" class="icon round fa-linkedin"><span class="label">Linkedin</span></a></li>
+          <li><a target="_blank" href="https://www.instagram.com/iitbombay.moodi/" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+
+        <div class="copyright">
+          &copy; <a target="_blank" href="https://www.facebook.com/arsh.ansari.14289">Creatives @2018</a>
+        </div>
+
+      </div>
+    </footer>
