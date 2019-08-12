@@ -30,24 +30,18 @@
           <div class="modal-content">
             <div class="modal-body">
               <h4 class="modtitle">REGISTRATION</h4>
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#dr_hu">Description & Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_hu">Prizes & LYP</a></li>
-                  <li><a data-toggle="tab" href="#reg_hu">Register</a></li>
-                </ul>
-              
-                <div class="tab-content">
-                  <div id="dr_hu" class="tab-pane fade in active">
-                    <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                  <div id="plyp_hu" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                  <div id="reg_hu" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-                </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+             <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                <label>
+                  Name:
+                  <input type="text" formControlName="name">
+                </label>
+                <label>
+                  Mobile:
+                  <input type="text" formControlName="mobile_number">
+                </label>
+                <button type="submit" class="button alt">Submit</button>
+                <button id="hidePopup" [hidden]="true" data-dismiss="modal"></button>
+              </form>
             </div>
           </div>
         </div>
