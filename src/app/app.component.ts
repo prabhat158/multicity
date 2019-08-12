@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormGroup, FormControl } from '@angular/forms';
 
 declare const gapi:any;
 
+const httpOptions={
+  headers: new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':'my-auth-token',
+
+  })
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  public regAlready: boolean = false;
-  public target= 'none';
 
   constructor(
     private http: HttpClient,
@@ -21,7 +26,45 @@ export class AppComponent {
   public name: string;
   public imageURL: string;
   public email: string;
-  private url: string = "http://api2.moodi.org/user";
+  private url: string = "http://192.168.0.8:8000/user";
+
+  regForm= new FormGroup({
+    name: new FormControl(''),
+    mobile_number: new FormControl(''),
+    year_of_study: new FormControl('First'),
+    gender:new FormControl('Male'),
+    permanent_address:new FormControl('Mumbai'),
+    zip_code:new FormControl(142453),
+    google_id:new FormControl("243434"),
+    email:new FormControl("dfsf@gmail.com"),
+    present_city:new FormControl('Mumbai'),
+    present_college:new FormControl('Mumbai'),
+    postal_address:new FormControl('Bombay'),
+    dob:new FormControl('111'),
+    cr_referral_code:new FormControl('')
+
+
+  })
+
+  onSubmit(){
+    this.regForm.patchValue({
+      email: this.email,
+      google_id: this.gID
+    })
+    console.log(this.regForm.value);
+    this.http.post('http://192.168.0.8:8000/user/create',this.regForm.value,httpOptions)
+      .subscribe(data =>
+      console.log(data));
+    document.getElementById("hidePopup").click();
+  }
+
+  public regAlready: boolean = false;
+  public target= 'none';
+
+  
+
+ 
+ 
 
   title = 'multicity2k19';
   public auth2:any;
