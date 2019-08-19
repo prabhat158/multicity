@@ -54,21 +54,22 @@ export class AppComponent {
   public email: string;
   private url: string = "http://api2.moodi.org/user";
   component = this;
+  gender =['male','female']
 
   regForm= new FormGroup({
     name: new FormControl(''),
     mobile_number: new FormControl(''),
     year_of_study: new FormControl('First'),
-    gender:new FormControl('Male'),
-    zip_code:new FormControl(142453),
+    gender:new FormControl(''),
+    zip_code:new FormControl(''),
     google_id:new FormControl("243434"),
     email:new FormControl("dfsf@gmail.com"),
-    present_city:new FormControl('Mumbai'),
-    present_college:new FormControl('Mumbai'),
-    postal_address:new FormControl('Bombay'),
+    present_city:new FormControl(''),
+    present_college:new FormControl(''),
+    postal_address:new FormControl(''),
     dob:new FormControl('111'),
     cr_referral_code:new FormControl('')
-
+    
 
   })
 
@@ -117,6 +118,8 @@ export class AppComponent {
   public attachSignin(element){
     this.auth2.attachClickHandler(element, {},
       (googleUser)=> {
+
+    document.getElementById(this.elementid).click();
         let profile=googleUser.getBasicProfile();
         this.gID=profile.getId();
         this.name= profile.getName();
@@ -132,8 +135,6 @@ export class AppComponent {
 
         this.onClick();
         this.cdRef.detectChanges();
-
-    document.getElementById(this.elementid).click();
       });
   }
 
@@ -155,6 +156,38 @@ export class AppComponent {
     this.googleInit();
   }
 
+  mqueries = `<b>What about the eliminations of other competitions?</b><br>
+  <p>Eliminations to all other competitions will be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
+
+  <b>There is no Multicity in my city. How can I participate?</b><br>
+  <p>Eliminations will either be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
+
+  <b>Who can participate in these competitions?</b><br>
+  <p>Any college student can take part in these competitions. There is no registration fee for participation.</p>
+
+  <b>What is Multicity Championship?</b><br>
+  <p>1 college team from every city shall be crowned 'Multicity Champion' based on level of their performances.</p>
+
+  <b>Are on-spot registrations allowed?</b><br>
+  <p>It is advised that you register in advance to confirm your slot as there are limited slots available</p>
+  
+  <b>Can I participate in these competitions directly during Mood Indigo?</b><br>
+  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itelf. Getting a slot on-ground for these cities will be very difficult.</p>`;
+
+  hqueries = `<b>What about the eliminations of other competitions?</b><br>
+  <p>Eliminations to all other competitions will be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
+
+  <b>There is no Multicity in my city. How can I participate?</b><br>
+  <p>Eliminations will either be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
+  
+  <b>Who can participate in Hysteria?</b><br>
+  <p>Anyone can take part in Hysteria. There is no registration fee for participation.</p>
+  
+  <b>Are on-spot registrations allowed?</b><br>
+  <p>No.</p>
+  
+  <b>Can I participate in these competitions directly during Mood Indigo?</b><br>
+  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itelf. Getting a slot on-ground for these cities will be very difficult.</p>`;
   // ***********************************************************************************************
 
   public create_team(eventid) {
@@ -240,6 +273,8 @@ export class AppComponent {
   }
   public go_home(id : string){
     this.elementid=id;
+
+    document.getElementById(this.elementid).click();
     document.getElementById("googleBtn").click();
 
   }

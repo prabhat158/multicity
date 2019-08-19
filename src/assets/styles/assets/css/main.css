@@ -83,14 +83,23 @@
 		.button.alt{
 			font-size: 0.8em;
 		}
+		.desc{
+			font-size: 0.8em;
+		}
 	}
 	@media screen and (max-width: 800px) {
 		.button.alt{
 			font-size: 0.7em;
 		}
+		.desc{
+			font-size: 0.7em;
+		}
 	}
 	@media screen and (max-width:610px) {
 		.button.alt{
+			font-size: 0.6em;
+		}
+		.desc{
 			font-size: 0.6em;
 		}
 	}
@@ -103,6 +112,9 @@
 		}
 		.col-sm-3{
 			margin:6px;
+		}
+		.button.alt{
+			width: 50%;
 		}
 	}
 /* Containers */
@@ -4480,4 +4492,37 @@
 				padding: 3em 0 1em 0;
 			}
 
+		}
+
+		@media screen and (max-width:770px){
+			.row{
+				float: left;
+				width: 49.999%;
+				margin: auto;
+			}
+			.col-sm-4{
+				padding: 5px;
+			}
+		}
+
+		@media screen and (max-width:610px){
+			.row{
+				float: left;
+				width: 49.999%;
+				margin: auto;
+			}
+			.col-sm-4{
+				padding: 5px;
+			}
+		}
+
+		@media screen and (max-width:576px){
+			.row{
+				float: left;
+				width: 49.999%;
+				margin: auto;
+			}
+			.col-sm-4{
+				padding: 5px;
+			}
 		}

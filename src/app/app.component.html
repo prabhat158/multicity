@@ -36,36 +36,37 @@
              <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
                 <label>
                   Name*:
-                  <input type="text" formControlName="name">
+                  <input type="text" formControlName="name" required> 
                 </label>
                 <label>
                   Mobile*:
-                  <input type="text" formControlName="mobile_number">
+                  <input type="text" formControlName="mobile_number" required>
                 </label>
                 <label>
                     Current College*:
-                    <input type="text" formControlName="mobile_number">
+                    <input type="text" formControlName="present_college" required>
                   </label>
                   <label>
                       Current City of Stay*:
-                      <input type="text" formControlName="mobile_number">
+                      <input type="text" formControlName="present_city" required>
                     </label>
                     <label>
                         Pin Code of College*:
-                        <input type="text" formControlName="mobile_number">
+                        <input type="text" formControlName="zip_code" required>
                       </label>
                       <label>
                           Current Address*:
-                          <input type="text" formControlName="mobile_number">
+                          <input type="text" formControlName="postal_address" required>
                         </label>
                         <label>
                             Current Year of Study*:
-                            <input type="text" formControlName="mobile_number">
+                            <input type="text" formControlName="mobile_number" required>
                           </label>
-                          <label>
-                              Gender*:
-                              <input type="text" formControlName="mobile_number">
-                            </label>
+                          Gender*
+                            <select id="country" formControlName="gender" required>
+                              <option *ngFor="let c of gender" [ngValue]="c">{{ c }}</option>
+                            </select>
+                          
 
                 <button type="submit" class="button alt">Submit</button>
                 <button id="hidePopup" [hidden]="true" data-dismiss="modal"></button>
@@ -138,7 +139,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_is" class="tab-pane fade">
-                      <p [innerHTML]="queries" class="tabbody"></p>
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_is" class="tab-pane fade">
                             <div class="tabbody">
@@ -245,7 +246,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_bts" class="tab-pane fade">
-                      <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_bts" class="tab-pane fade">
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -273,7 +274,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_mii" class="tab-pane fade">
-                      <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_mii" class="tab-pane fade">
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -301,7 +302,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_aagaaz" class="tab-pane fade">
-                      <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_aagaaz" class="tab-pane fade">
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -329,7 +330,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_hys" class="tab-pane fade">
-                      <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p [innerHTML]='hqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_hys" class="tab-pane fade">
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -357,7 +358,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_hu" class="tab-pane fade">
-                      <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_hu" class="tab-pane fade">
                         <div class="tabbody">
@@ -419,7 +420,7 @@
                     <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                   <div id="plyp_sti" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_sti" class="tab-pane fade">
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -447,7 +448,7 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_db" class="tab-pane fade">
-                      <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_db" class="tab-pane fade">
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -475,7 +476,7 @@
                     <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                   <div id="plyp_mrmsbang" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_mrmsbang" class="tab-pane fade">
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -496,34 +497,50 @@
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                   <button (click)="my_team(1)" type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Thematic Dance</span>
               </div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
             </div>
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
               </div>
               <div class="col-sm-4">
                   <button (click)="my_team(2)" type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
+
               </div>
             </div>
-            <div class="row" style="margin-top:10px;margin-bottom:10px;">
+            <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
+              </div>
+            </div>
+            <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+              <div class="col-sm-4">
+                <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsbangaloremodal">MR. & MS. BANGALORE</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsbangaloremodal">MR. & MS. BANGALORE</button>
+                  <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
               </div>
             </div>
           </div>
@@ -553,7 +570,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_mrmskol" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_mrmskol" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -581,7 +598,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_minem" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_minem" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -602,36 +619,44 @@
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#mrmskolkatamodal">MR. & MS. KOLKATA</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Rap</span>
               </div>
           </div>
-          <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+          <div class="row1" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
                 
-              </div><div class="col-sm-2"></div>
+              </div>
           </div>
         </div>
         </article>
@@ -683,7 +708,7 @@
                     <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                   <div id="plyp_nr" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_nr" class="tab-pane fade">
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -711,7 +736,7 @@
                   <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
                 <div id="plyp_mitb" class="tab-pane fade">
-                  <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p [innerHTML]='mqueries' class="tabbody"></p>
                 </div>
                 <div id="reg_mitb" class="tab-pane fade">
                   <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -739,7 +764,7 @@
                 <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
               <div id="plyp_dt" class="tab-pane fade">
-                <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_dt" class="tab-pane fade">
                 <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -767,7 +792,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_sur" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_sur" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -795,7 +820,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_mt" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_mt" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -823,7 +848,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_rang" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_rang" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -851,7 +876,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_ml" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_ml" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -873,34 +898,43 @@
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#nrityanjalimodal">NRITYANJALI</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Classical Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Duet Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#surshringarmodal">SURSHRINGAR</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Classical Music</span>
               </div>
           </div>
-          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+          <div class="row1" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#mimetimemodal">MIME TIME</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Mime Competition</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#rangeelamodal">RANGEELA</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Water Colour Painting</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Doodling Competition</span>
               </div>
           </div>
         </div>
@@ -929,7 +963,7 @@
                 <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
               <div id="plyp_mrmspune" class="tab-pane fade">
-                <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_mrmspune" class="tab-pane fade">
                 <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -957,7 +991,7 @@
                 <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </div>
               <div id="plyp_ps" class="tab-pane fade">
-                <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_ps" class="tab-pane fade">
                 <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -980,16 +1014,19 @@
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
                 
             </div><div class="col-sm-2"></div>
           </div>
@@ -997,33 +1034,39 @@
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#mrmspunemodal">MR. & MS. PUNE</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
                 
             </div><div class="col-sm-2"></div>
           </div>
-            <div class="row" style="margin-top:10px;margin-bottom:10px;">
+            <div class="row1" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
                 
               </div>
               <div class="col-sm-4">
                 
                 <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
                 
             </div><div class="col-sm-2"></div>
           </div></div>
@@ -1049,7 +1092,7 @@
                     <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                   <div id="plyp_mrmsmi" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_mrmsmi" class="tab-pane fade">
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -1073,31 +1116,39 @@
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#mimetimemodal">MIME TIME</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Mime Competition</span>
               </div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
             </div>
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
                 <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Dance</span>
                 </div>
                 <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
+                  <span class="desc" style="margin-top: 0; margin-bottom: 0;">Duet Dance</span>
                 </div>
                 <div class="col-sm-4">
                     <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                    <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
                 </div>
               </div>
-              <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+              <div class="row1" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
                   <div class="col-sm-4">
                     <button type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
+                    <span class="desc" style="margin-top: 0; margin-bottom: 0;">Doodling Competition</span>
                   </div>
                   <div class="col-sm-4">
                     <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsmimodal">MR. & MS. MI</button>
+                    <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
                   </div>
                 </div>
           </div>
@@ -1125,7 +1176,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_mrmsdel" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_mrmsdel" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -1153,7 +1204,7 @@
               <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div id="plyp_con" class="tab-pane fade">
-              <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_con" class="tab-pane fade">
               <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -1168,52 +1219,64 @@
         <article class="box">
           <header>
             <h2>Delhi</h2>
-            <p>12.10.2019 - 13.10.2019</p>
+            <p style="padding-bottom: 0; margin-bottom: 0;">12.10.2019 - 13.10.2019</p>
           </header>
           
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Thematic Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
             </div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsdelhimodal">MR. & MS. DELHI</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
             </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Rap</span>
             </div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#conchordmodal">CONCHORD</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Acapella</span>
             </div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
             </div>
           </div>
           
@@ -1223,51 +1286,88 @@
     </section>
 
 <!--Seven/Jaipur-->
-    <!--Desi Beats, Indigo Saga, Beat the street, MI Idol, Singing the Indigos, Aagaaz, Humor Us-->
-    <!--section id="seven" class="wrapper post bg-img" data-bg="../assets/styles/images/Mumbai.jpg">
+    <!--Desi Beats, MI Idol, Singing the Indigos, Aagaaz, Humor Us, MI the best, double trouble, the chosen one-->
+    <section id="seven" class="wrapper post bg-img" data-bg="../assets/styles/images/Mumbai.jpg">
+      <div class="modal fade" id="thechosenonemodal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h4 class="modtitle">The Chosen One</h4>
+              <p style="padding: 0; margin-top: 0; margin-bottom:0;">Mono-Acting Competition</p>
+              <ul class="nav nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="#dr_tco">Rules</a></li>
+                  <li><a data-toggle="tab" href="#plyp_tco">Queries</a></li>
+                  <li><a data-toggle="tab" href="#reg_tco">Register</a></li>
+                </ul>
+              
+                <div class="tab-content">
+                  <div id="dr_tco" class="tab-pane fade in active">
+                    <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div id="plyp_tco" class="tab-pane fade">
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
+                  </div>
+                  <div id="reg_tco" class="tab-pane fade">
+                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  </div>
+                </div>
+              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="inner">
         <article class="box">
           <header>
             <h2>Jaipur</h2>
             <p>18.10.2019 - 20.10.2019</p>
+            <p>Oneiros, Manipal University, Jaipur</p>
           </header>
           
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
+                <button type="button" class="button alt" data-toggle="modal" data-target="#thechosenonemodal">THE CHOSEN ONE</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Mono-Acting Competition</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <button type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
           </div>
-          <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+          <div class="row1" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+              <button type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Duet Dance</span>
             </div>
           </div>
           
         </div>
         </article>
       </div>
-    </section-->
+    </section>
 
     <!--Eight/Bhubaneswar-->
     <!--Desi Beats, MI Idol, Aagaaz, Surshringar, Nrityanjali-->
@@ -1277,26 +1377,28 @@
           <header>
             <h2>Bhubaneswar</h2>
             <p>08.11.2019 - 10.11.2019</p>
+            <p>Xpressions, Xavier Institute of Management, Bhubaneswar</p>
           </header>
           
           <div class="container-fluid" style="width: 100%">
-          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+          <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#surshringarmodal">SURSHRINGAR</button>
-              </div>
-              <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Classical Music</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+              <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#nrityanjalimodal">NRITYANJALI</button>
+              <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
             </div>
           </div>
           
@@ -1325,7 +1427,7 @@
                     <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                   <div id="plyp_dc" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_dc" class="tab-pane fade">
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -1341,35 +1443,43 @@
           <header>
             <h2>Chandigarh</h2>
             <p>08.11.2019 - 10.11.2019</p>
+            <p>Pecfest, PEC Chandigarh</p>
           </header>
           
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#rangeelamodal">RANGEELA</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Water Colour Painting</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Doodling Competition</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#directorscutmodal">DIRECTOR'S CUT</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Film Making</span>
               </div>
           </div>
-          <div class="row" style="margin-top:10px;margin-bottom:10px;">
+          <div class="row1" style="margin-top:10px;margin-bottom:10px;">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
           </div>
           
@@ -1379,7 +1489,7 @@
     </section>
 
     <!--Ten/Mumbai-->
-    <!--Desi Beats, mr and ms mumbai, hysteria, Beat the street, MI Idol, Singing the Indigos, Aagaaz, Humor Us-->
+    <!--Desi Beats, mr and ms mumbai, hysteria, Beat the street, MI Idol, Singing the Indigos, Aagaaz, Humor Us, poetry slam, mi'nem-->
     <section id="ten" class="wrapper post bg-img" data-bg="../assets/styles/images/Mumbai.jpg">
       <div class="modal fade" id="mrmsmumbaimodal" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -1398,7 +1508,7 @@
                     <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div>
                   <div id="plyp_mrmsmum" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_mrmsmum" class="tab-pane fade">
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -1415,36 +1525,53 @@
             <h2>Mumbai</h2>
             <p>01.12.2019</p>
           </header>
-          
-          <div class="container-fluid" style="width: 100%">
+          <div class="container-fluid" style="width: 100%; padding-top: 0; margin-top: 0;">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsmumbaimodal">MR. & MS. MUMBAI</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
                 <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
             <div class="col-sm-4">
               <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
+            </div>
+          </div>
+          <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <button type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Rap</span>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+              <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
             </div>
           </div>
           
@@ -1464,7 +1591,7 @@
         </ul>
 
         <div class="copyright">
-          &copy; <a target="_blank" href="https://www.facebook.com/arsh.ansari.14289">Creatives @2018</a>
+          &copy; <a target="_blank" href="https://www.facebook.com/prabhat7758">Creatives @2019</a>
         </div>
 
       </div>
