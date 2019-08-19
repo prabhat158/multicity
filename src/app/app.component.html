@@ -147,7 +147,7 @@
                                       <button (click)="go_home('ISB')">Get Multicity ID</button>
                                 </div>
                                 <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                      <button (click)="create_team(1)">create team</button><br>
+                                      <button (click)="create_team(teamno)">create team</button><br>
                                       Only Team Leader should create the team<br>
                                       Team Leader can then add the Team Members<br>
                                     
@@ -175,7 +175,7 @@
                                         <td>{{user.name}}</td>
                                         <td>{{user.mobile_number}}</td>
                                         <td>
-                                          <button (click)="exit_team(user.mobile_number,1)" type="button">Remove</button>
+                                          <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -213,7 +213,7 @@
                                     <div *ngIf="is_leader_names?.length < 14 && my_team_names?.length < 14" class="input-group">
                                         <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
                                         <span class="input-group-btn">
-                                            <button (click)="add_member(myInput.value,1)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                            <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
                                         </span>
                                     </div>
                                     You are registered!<br>
@@ -249,10 +249,89 @@
                       <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_bts" class="tab-pane fade">
-                      <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    </div>
+                      <div class="tabbody">
+                          <div *ngIf="status ==false">
+                                <button (click)="go_home('ISB2')">Get Multicity ID</button>
+                          </div>
+                          <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                <button (click)="create_team(teamno)">create team</button><br>
+                                Only Team Leader should create the team<br>
+                                Team Leader can then add the Team Members<br>
+                              
+                          </div>
+                          <div style="align-content: flex-end">
+                              <div *ngIf="leader_names">
+                                  Leader: {{leader_names.name}}
+                                  </div>
+                        <div *ngIf="is_leader_names">
+                          <table  class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Remove Option</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of is_leader_names">
+                                <tr>
+                                  <td>{{user.name}}</td>
+                                  <td>{{user.mobile_number}}</td>
+                                  <td>
+                                    <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        <div *ngIf="my_team_names">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <td>Name</td>
+                                    <td>Phone No.</td>
+                                    <td>Status</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{leader_names.name}}</td>
+                                    <td>{{leader_names.mobile_number}}</td>
+                                    <td>Team Leader</td>
+                                </tbody>
+                                <tbody *ngFor="let user of my_team_names">
+                                    <tr>
+                                      <td>{{user.name}}</td>
+                                      <td>{{user.mobile_number}}</td>
+                                      <td>Member</td>
+                                    </tr>
+                                  </tbody>
+
+                              </table>
+                              You are registered!<br>
+                              Team Limit: 13<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            </div>
+                          </div>
+                          <div *ngIf="is_leader_names">
+                              <div *ngIf="is_leader_names?.length < 12" class="input-group">
+                                  <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                  <span class="input-group-btn">
+                                      <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                  </span>
+                              </div>
+                              You are registered!<br>
+                              Team Limit: 13<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                          </div>
+                         <br>
+                        </div>
+              </div>
                   </div>
-                <button type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="ISB2" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -277,10 +356,44 @@
                       <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_mii" class="tab-pane fade">
-                      <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                      <div class="tabbody">
+                          <div *ngIf="status ==false">
+                                <button (click)="go_home('ISB3')">Get Multicity ID</button>
+                          </div>
+                          <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                <button (click)="create_team(3)">Register</button><br>
+                              
+                          </div>
+                          <div style="align-content: flex-end">
+
+                        <div *ngIf="is_leader_names">
+                          <table  class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                              </tbody>
+                              <tbody *ngFor="let user of is_leader_names">
+                                <tr>
+                                  <td>{{user.name}}</td>
+                                  <td>{{user.mobile_number}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            You are registered!
+                          </div>
+                          </div>
+                          
+                         <br>
+                        </div>
                     </div>
                   </div>
-                <button type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="IBS3" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -305,10 +418,89 @@
                       <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_aagaaz" class="tab-pane fade">
-                      <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    </div>
+                      <div class="tabbody">
+                          <div *ngIf="status ==false">
+                                <button (click)="go_home('IBS4')">Get Multicity ID</button>
+                          </div>
+                          <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                <button (click)="create_team(teamno)">create team</button><br>
+                                Only Team Leader should create the team<br>
+                                Team Leader can then add the Team Members<br>
+                              
+                          </div>
+                          <div style="align-content: flex-end">
+                              <div *ngIf="leader_names">
+                                  Leader: {{leader_names.name}}
+                                  </div>
+                        <div *ngIf="is_leader_names">
+                          <table  class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Remove Option</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of is_leader_names">
+                                <tr>
+                                  <td>{{user.name}}</td>
+                                  <td>{{user.mobile_number}}</td>
+                                  <td>
+                                    <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        <div *ngIf="my_team_names">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <td>Name</td>
+                                    <td>Phone No.</td>
+                                    <td>Status</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{leader_names.name}}</td>
+                                    <td>{{leader_names.mobile_number}}</td>
+                                    <td>Team Leader</td>
+                                </tbody>
+                                <tbody *ngFor="let user of my_team_names">
+                                    <tr>
+                                      <td>{{user.name}}</td>
+                                      <td>{{user.mobile_number}}</td>
+                                      <td>Member</td>
+                                    </tr>
+                                  </tbody>
+
+                              </table>
+                              You are registered!<br>
+                              Team Limit: 20<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            </div>
+                          </div>
+                          <div *ngIf="is_leader_names">
+                              <div *ngIf="is_leader_names?.length < 19" class="input-group">
+                                  <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                  <span class="input-group-btn">
+                                      <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                  </span>
+                              </div>
+                              You are registered!<br>
+                              Team Limit: 20<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                          </div>
+                         <br>
+                        </div>
+              </div>
                   </div>
-                <button type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="IBS4" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -336,7 +528,7 @@
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                     </div>
                   </div>
-                <button type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="IBS5" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -363,10 +555,10 @@
                     <div id="reg_hu" class="tab-pane fade">
                         <div class="tabbody">
                             <div *ngIf="status ==false">
-                                  <button (click)="go_home('ISB1')">Get Multicity ID</button>
+                                  <button (click)="go_home('ISB6')">Get Multicity ID</button>
                             </div>
                             <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                  <button (click)="create_team(2)">Register</button><br>
+                                  <button (click)="create_team(6)">Register</button><br>
                                 
                             </div>
                             <div style="align-content: flex-end">
@@ -398,7 +590,7 @@
                           </div>
                       </div>
                   </div>
-                <button id="ISB1" type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="ISB6" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -426,7 +618,7 @@
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                   </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="IBS8" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -454,7 +646,7 @@
                       <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                     </div>
                   </div>
-                <button type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="IBS7" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -482,7 +674,7 @@
                     <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                   </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="IBS9" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -500,46 +692,46 @@
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Thematic Dance</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                  <button (click)="my_team(2)" type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                  <button (click)="my_team(3)" type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
             </div>
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                  <button (click)="my_team(4)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+                  <button (click)="my_team(5)" type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
               </div>
               <div class="col-sm-4">
-                  <button (click)="my_team(2)" type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+                  <button (click)="my_team(6)" type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
 
               </div>
             </div>
             <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                  <button (click)="my_team(7)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                  <button (click)="my_team(8)" type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
             </div>
             <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsbangaloremodal">MR. & MS. BANGALORE</button>
+                <button (click)="my_team(9)" type="button" class="button alt" data-toggle="modal" data-target="#mrmsbangaloremodal">MR. & MS. BANGALORE</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+                  <button (click)="my_team(10)" type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
               </div>
             </div>
@@ -618,42 +810,42 @@
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <button (click)="my_team(11)" type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <button (click)="my_team(12)" type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <button (click)="my_team(13)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+                <button (click)="my_team(14)" type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mrmskolkatamodal">MR. & MS. KOLKATA</button>
+                <button (click)="my_team(15)" type="button" class="button alt" data-toggle="modal" data-target="#mrmskolkatamodal">MR. & MS. KOLKATA</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
+                <button (click)="my_team(16)" type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Rap</span>
               </div>
           </div>
           <div class="row1" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4 alt">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(17)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+                <button (click)="my_team(18)" type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
                 
               </div>
@@ -887,34 +1079,6 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="btsbhopalmodal" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h4 class="modtitle">BEAT THE STREET</h4>
-        <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Street Dance Competition</p>
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#dr_btsb">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_btsb">Queries</a></li>
-            <li><a data-toggle="tab" href="#reg_btsb">Register</a></li>
-          </ul>
-        
-          <div class="tab-content">
-            <div id="dr_btsb" class="tab-pane fade in active">
-              <p class="tabbody">TO BE ANNOUNCED</p>
-            </div>
-            <div id="plyp_btsb" class="tab-pane fade">
-              <p [innerHTML]='mqueries' class="tabbody"></p>
-            </div>
-            <div id="reg_btsb" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-            </div>
-          </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="modal fade" id="stibhopalmodal" role="dialog">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -953,43 +1117,43 @@
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#nrityanjalimodal">NRITYANJALI</button>
+                <button (click)="my_team(19)" type="button" class="button alt" data-toggle="modal" data-target="#nrityanjalimodal">NRITYANJALI</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Classical Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#stibhopalmodal">SINGING THE INDIGOS</button>
+                <button (click)="my_team(20)" type="button" class="button alt" data-toggle="modal" data-target="#stibhopalmodal">SINGING THE INDIGOS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
+                <button (click)="my_team(21)" type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
+                <button (click)="my_team(22)" type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Duet Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#btsbhopalmodal">BEAT THE STREET</button>
+                <button (click)="my_team(23)" type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#surshringarmodal">SURSHRINGAR</button>
+                <button (click)="my_team(24)" type="button" class="button alt" data-toggle="modal" data-target="#surshringarmodal">SURSHRINGAR</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Classical Music</span>
               </div>
           </div>
           <div class="row1" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4 alt">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mimetimemodal">MIME TIME</button>
+                <button (click)="my_team(25)" type="button" class="button alt" data-toggle="modal" data-target="#mimetimemodal">MIME TIME</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Mime Competition</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#rangeelamodal">RANGEELA</button>
+                <button (click)="my_team(26)" type="button" class="button alt" data-toggle="modal" data-target="#rangeelamodal">RANGEELA</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Water Colour Painting</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
+                <button (click)="my_team(27)" type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Doodling Competition</span>
               </div>
           </div>
@@ -1050,10 +1214,44 @@
                 <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_ps" class="tab-pane fade">
-                <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                <div class="tabbody">
+                    <div *ngIf="status ==false">
+                          <button (click)="go_home('IBS10')">Get Multicity ID</button>
+                    </div>
+                    <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                          <button  (click)="create_team(teamno)">Register</button><br>
+                        
+                    </div>
+                    <div style="align-content: flex-end">
+
+                  <div *ngIf="is_leader_names">
+                    <table  class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                        </tbody>
+                        <tbody *ngFor="let user of is_leader_names">
+                          <tr>
+                            <td>{{user.name}}</td>
+                            <td>{{user.mobile_number}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      You are registered!
+                    </div>
+                    </div>
+                    
+                   <br>
+                  </div>
               </div>
             </div>
-          <button type="button" class="button alt" data-dismiss="modal">Close</button>
+          <button id='IBS10' type="button" class="button alt" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -1069,19 +1267,19 @@
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(28)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <button (click)="my_team(29)" type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <button (click)="my_team(30)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
                 
             </div><div class="col-sm-2"></div>
@@ -1089,19 +1287,19 @@
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+                <button (click)="my_team(31)" type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+                <button (click)="my_team(32)" type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mrmspunemodal">MR. & MS. PUNE</button>
+                <button (click)="my_team(33)" type="button" class="button alt" data-toggle="modal" data-target="#mrmspunemodal">MR. & MS. PUNE</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
                 
             </div><div class="col-sm-2"></div>
@@ -1109,19 +1307,19 @@
             <div class="row1" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4 alt">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <button (click)="my_team(34)" type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <button (click)="my_team(35)" type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
                 
               </div>
               <div class="col-sm-4">
                 
-                <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+                <button (click)="my_team(36)" type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
                 
             </div><div class="col-sm-2"></div>
@@ -1186,34 +1384,6 @@
           </div>
         </div>
       </div>
-      <div class="modal fade" id="aagaaznagpurmodal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-              <h4 class="modtitle">AAGAAZ</h4>
-              <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#dr_aagaazn">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_aagaazn">Queries</a></li>
-                  <li><a data-toggle="tab" href="#reg_aagaazn">Register</a></li>
-                </ul>
-              
-                <div class="tab-content">
-                  <div id="dr_aagaazn" class="tab-pane fade in active">
-                    <p>TO BE ANNOUNCED</p>
-                  </div>
-                  <div id="plyp_aagaazn" class="tab-pane fade">
-                    <p [innerHTML]='mqueries' class="tabbody"></p>
-                  </div>
-                  <div id="reg_aagaazn" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-                </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div>
     <div class="modal fade" id="miidolnagmodal" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -1283,39 +1453,39 @@
           <div class="container-fluid" style="width: 100%">
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaaznagpurmodal">AAGAAZ</button>
+                <button (click)="my_team(37)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mimetimemodal">MIME TIME</button>
+                <button (click)="my_team(38)" type="button" class="button alt" data-toggle="modal" data-target="#mimetimemodal">MIME TIME</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Mime Competition</span>
               </div>
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#miidolnagmodal">MI IDOL</button>
+                  <button (click)="my_team(39)" type="button" class="button alt" data-toggle="modal" data-target="#miidolnagmodal">MI IDOL</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
             </div>
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
                 <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
+                  <button (click)="my_team(40)" type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Dance</span>
                 </div>
                 <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
+                  <button (click)="my_team(41)" type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
                   <span class="desc" style="margin-top: 0; margin-bottom: 0;">Duet Dance</span>
                 </div>
                 <div class="col-sm-4">
-                    <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsnagmodal">DESI BEATS</button>
+                    <button (click)="my_team(42)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsnagmodal">DESI BEATS</button>
                     <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
                 </div>
               </div>
               <div class="row1" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
                   <div class="col-sm-4 alt">
-                    <button type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
+                    <button (click)="my_team(43)" type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
                     <span class="desc" style="margin-top: 0; margin-bottom: 0;">Doodling Competition</span>
                   </div>
                   <div class="col-sm-4">
-                    <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsminagmodal">MR. & MS. MI</button>
+                    <button (click)="my_team(44)" type="button" class="button alt" data-toggle="modal" data-target="#mrmsminagmodal">MR. & MS. MI</button>
                     <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
                   </div>
                 </div>
@@ -1393,57 +1563,57 @@
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <button (click)="my_team(45)" type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
+                <button (click)="my_team(46)" type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Thematic Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <button (click)="my_team(47)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(48)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <button (click)="my_team(49)" type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <button (click)="my_team(50)" type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+              <button (click)="my_team(51)"  type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+              <button (click)="my_team(52)"  type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsdelhimodal">MR. & MS. DELHI</button>
+              <button (click)="my_team(53)"  type="button" class="button alt" data-toggle="modal" data-target="#mrmsdelhimodal">MR. & MS. DELHI</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
             </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
+              <button (click)="my_team(54)"  type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Rap</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#conchordmodal">CONCHORD</button>
+              <button (click)="my_team(55)"  type="button" class="button alt" data-toggle="modal" data-target="#conchordmodal">CONCHORD</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Acapella</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+              <button (click)="my_team(56)"  type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
             </div>
           </div>
@@ -1568,34 +1738,6 @@
           </div>
         </div>
     </div>
-      <div class="modal fade" id="aagaazjaipurmodal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-              <h4 class="modtitle">AAGAAZ</h4>
-              <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#dr_aagaazj">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_aagaazj">Queries</a></li>
-                  <li><a data-toggle="tab" href="#reg_aagaazj">Register</a></li>
-                </ul>
-              
-                <div class="tab-content">
-                  <div id="dr_aagaazj" class="tab-pane fade in active">
-                    <p>TO BE ANNOUNCED</p>
-                  </div>
-                  <div id="plyp_aagaazj" class="tab-pane fade">
-                    <p [innerHTML]='mqueries' class="tabbody"></p>
-                  </div>
-                  <div id="reg_aagaazj" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-                </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div>
     <div class="modal fade" id="stijaimodal" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -1635,39 +1777,39 @@
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidoljaimodal">MI IDOL</button>
+                <button (click)="my_team(57)" type="button" class="button alt" data-toggle="modal" data-target="#miidoljaimodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#thechosenonemodal">THE CHOSEN ONE</button>
+                <button (click)="my_team(58)" type="button" class="button alt" data-toggle="modal" data-target="#thechosenonemodal">THE CHOSEN ONE</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Mono-Acting Competition</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsjaimodal">DESI BEATS</button>
+                <button (click)="my_team(59)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsjaimodal">DESI BEATS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazjaipurmodal">AAGAAZ</button>
+                <button (click)="my_team(60)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
+                <button (click)="my_team(61)" type="button" class="button alt" data-toggle="modal" data-target="#mithebestmodal">MI THE BEST</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#stijaimodal">SINGING THE INDIGOS</button>
+                <button (click)="my_team(62)" type="button" class="button alt" data-toggle="modal" data-target="#stijaimodal">SINGING THE INDIGOS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
           </div>
           <div class="row1" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4 alt">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#humorusjaimodal">HUMOR US</button>
+              <button (click)="my_team(63)" type="button" class="button alt" data-toggle="modal" data-target="#humorusjaimodal">HUMOR US</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
+              <button (click)="my_team(64)" type="button" class="button alt" data-toggle="modal" data-target="#doubletroublemodal">DOUBLE TROUBLE</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Duet Dance</span>
             </div>
           </div>
@@ -1680,34 +1822,6 @@
     <!--Eight/Bhubaneswar-->
     <!--Desi Beats, MI Idol, Aagaaz, Surshringar, Nrityanjali-->
     <section id="eight" class="wrapper post bg-img" data-bg="../assets/styles/images/Bhubneshwar19.jpg">
-      <div class="modal fade" id="aagaazbhumodal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-              <h4 class="modtitle">AAGAAZ</h4>
-              <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#dr_aagaazbhu">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_aagaazbhu">Queries</a></li>
-                  <li><a data-toggle="tab" href="#reg_aagaazbhu">Register</a></li>
-                </ul>
-              
-                <div class="tab-content">
-                  <div id="dr_aagaazbhu" class="tab-pane fade in active">
-                    <p>TO BE ANNOUNCED</p>
-                  </div>
-                  <div id="plyp_aagaazbhu" class="tab-pane fade">
-                    <p [innerHTML]='mqueries' class="tabbody"></p>
-                  </div>
-                  <div id="reg_aagaazbhu" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-                </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div>
       <div class="modal fade" id="desibeatsbhumodal" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -1775,21 +1889,21 @@
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidolbhumodal">MI IDOL</button>
+                <button (click)="my_team(65)" type="button" class="button alt" data-toggle="modal" data-target="#miidolbhumodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#surshringarmodal">SURSHRINGAR</button>
+                <button (click)="my_team(66)" type="button" class="button alt" data-toggle="modal" data-target="#surshringarmodal">SURSHRINGAR</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Classical Music</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsbhumodal">DESI BEATS</button>
+              <button (click)="my_team(67)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsbhumodal">DESI BEATS</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazbhumodal">AAGAAZ</button>
+              <button (click)="my_team(68)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
             </div>
           </div>
@@ -1802,34 +1916,7 @@
     <!--Nine/Chandigarh-->
     <!--Desi Beats, MI Idol, Aagaaz, Humor Us, director's cut, mood-ling, rangeela-->
     <section id="nine" class="wrapper post bg-img" data-bg="../assets/styles/images/Mumbai.jpg">
-      <div class="modal fade" id="aagaazchmodal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-              <h4 class="modtitle">AAGAAZ</h4>
-              <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#dr_aagaazch">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_aagaazch">Queries</a></li>
-                  <li><a data-toggle="tab" href="#reg_aagaazch">Register</a></li>
-                </ul>
-              
-                <div class="tab-content">
-                  <div id="dr_aagaazch" class="tab-pane fade in active">
-                    <p>TO BE ANNOUNCED</p>
-                  </div>
-                  <div id="plyp_aagaazch" class="tab-pane fade">
-                    <p [innerHTML]='mqueries' class="tabbody"></p>
-                  </div>
-                  <div id="reg_aagaazch" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
-                </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div>
+      
     <div class="modal fade" id="humoruschmodal" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -1953,36 +2040,36 @@
           <div class="container-fluid" style="width: 100%">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidolchmodal">MI IDOL</button>
+                <button (click)="my_team(69)" type="button" class="button alt" data-toggle="modal" data-target="#miidolchmodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#rangeelamodal">RANGEELA</button>
+                <button (click)="my_team(70)" type="button" class="button alt" data-toggle="modal" data-target="#rangeelamodal">RANGEELA</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Water Colour Painting</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatschmodal">DESI BEATS</button>
+                <button (click)="my_team(71)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatschmodal">DESI BEATS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazchmodal">AAGAAZ</button>
+                <button (click)="my_team(72)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
+                <button (click)="my_team(73)" type="button" class="button alt" data-toggle="modal" data-target="#moodlingmodal">MOOD-LING</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Doodling Competition</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#directorscutmodal">DIRECTOR'S CUT</button>
+                <button (click)="my_team(74)" type="button" class="button alt" data-toggle="modal" data-target="#directorscutmodal">DIRECTOR'S CUT</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Film Making</span>
               </div>
           </div>
           <div class="row1" style="margin-top:10px;margin-bottom:10px;">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 alt">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#humoruschmodal">HUMOR US</button>
+              <button (click)="my_team(75)" type="button" class="button alt" data-toggle="modal" data-target="#humoruschmodal">HUMOR US</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
           </div>
@@ -2032,49 +2119,49 @@
           <div class="container-fluid" style="width: 100%; padding-top: 0; margin-top: 0;">
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
+                <button (click)="my_team(76)" type="button" class="button alt" data-toggle="modal" data-target="#miidolmodal">MI IDOL</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Hindi Solo Singing</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#mrmsmumbaimodal">MR. & MS. MUMBAI</button>
+                <button (click)="my_team(77)" type="button" class="button alt" data-toggle="modal" data-target="#mrmsmumbaimodal">MR. & MS. MUMBAI</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Personality Hunt</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
+                <button (click)="my_team(78)" type="button" class="button alt" data-toggle="modal" data-target="#desibeatsmodal">DESI BEATS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Bollywood Dance</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(79)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
+                <button (click)="my_team(80)" type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Street Dance</span>
               </div>
               <div class="col-sm-4">
-                <button type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
+                <button (click)="my_team(81)" type="button" class="button alt" data-toggle="modal" data-target="#singingtheindigosmodal">SINGING THE INDIGOS</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Solo Singing</span>
               </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
+              <button (click)="my_team(82)" type="button" class="button alt" data-toggle="modal" data-target="#humorusmodal">HUMOR US</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Stand-up Comedy</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
+              <button (click)="my_team(83)" type="button" class="button alt" data-toggle="modal" data-target="#hysteriamodal">HYSTERIA</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Semi-Professional DJ</span>
             </div>
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;"><div class="col-sm-2"></div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
+              <button (click)="my_team(84)" type="button" class="button alt" data-toggle="modal" data-target="#minemmodal">MI'NEM</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Solo Rap</span>
             </div>
             <div class="col-sm-4">
-              <button type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
+              <button (click)="my_team(85)" type="button" class="button alt" data-toggle="modal" data-target="#poetryslammodal">POETRY SLAM</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">English Slam Poetry</span>
             </div>
           </div>

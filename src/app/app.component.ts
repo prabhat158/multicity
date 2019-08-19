@@ -44,6 +44,7 @@ export class AppComponent {
  
   public my_team_names:any;
   public elementid:any='ISB';
+  public teamno:any;
 
   public leader_names:any;
   public is_leader_names:any;
@@ -598,6 +599,8 @@ export class AppComponent {
     }
 
   public my_team(eventid){
+    this.teamno=eventid;
+    this.cdRef.detectChanges();
     this.http.get('http://api2.moodi.org/team/is_leader/'+this.gID+"?event="+eventid)
     .subscribe(
       data => {
