@@ -35,13 +35,38 @@
               <h4 class="modtitle">REGISTRATION</h4>
              <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
                 <label>
-                  Name:
+                  Name*:
                   <input type="text" formControlName="name">
                 </label>
                 <label>
-                  Mobile:
+                  Mobile*:
                   <input type="text" formControlName="mobile_number">
                 </label>
+                <label>
+                    Current College*:
+                    <input type="text" formControlName="mobile_number">
+                  </label>
+                  <label>
+                      Current City of Stay*:
+                      <input type="text" formControlName="mobile_number">
+                    </label>
+                    <label>
+                        Pin Code of College*:
+                        <input type="text" formControlName="mobile_number">
+                      </label>
+                      <label>
+                          Current Address*:
+                          <input type="text" formControlName="mobile_number">
+                        </label>
+                        <label>
+                            Current Year of Study*:
+                            <input type="text" formControlName="mobile_number">
+                          </label>
+                          <label>
+                              Gender*:
+                              <input type="text" formControlName="mobile_number">
+                            </label>
+
                 <button type="submit" class="button alt">Submit</button>
                 <button id="hidePopup" [hidden]="true" data-dismiss="modal"></button>
               </form>
@@ -53,27 +78,21 @@
       <div class="modal fade" id="reg-profile" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <div class="modal-body">
-              <h4 class="modtitle">PROFILE</h4>
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#dr_hu">Description & Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_hu">Prizes & LYP</a></li>
-                  <li><a data-toggle="tab" href="#reg_hu">Register</a></li>
-                </ul>
-              
-                <div class="tab-content">
-                  <div id="dr_hu" class="tab-pane fade in active">
-                    <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                  <div id="plyp_hu" class="tab-pane fade">
-                    <p class="tabbody">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                  <div id="reg_hu" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
+              <div class="modal-body">
+                  <h4 class="modtitle">Profile</h4>
+                 <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                    <label>
+                      Name:
+                      <input type="text" formControlName="name">
+                    </label>
+                    <label>
+                      Mobile:
+                      <input type="text" formControlName="mobile_number">
+                    </label>
+                    <button type="submit" class="button alt">Submit</button>
+                    <button id="hidePopup" [hidden]="true" data-dismiss="modal"></button>
+                  </form>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
-            </div>
           </div>
         </div>
       </div>
@@ -119,13 +138,89 @@
                       <p class="tabbody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div id="plyp_is" class="tab-pane fade">
-                      <p class="tabbody">{{ queries }}</p>
+                      <p [innerHTML]="queries" class="tabbody"></p>
                     </div>
                     <div id="reg_is" class="tab-pane fade">
-                      <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                            <div class="tabbody">
+                                <div *ngIf="status ==false">
+                                      <button (click)="go_home('ISB')">Get Multicity No.</button>
+                                </div>
+                                <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                      <button (click)="create_team(1)">create team</button><br>
+                                      Only Team Leader should create the team<br><br>
+                                    
+                                </div>
+                                <div style="align-content: flex-end">
+                                    <div *ngIf="leader_names">
+                                        Leader: {{leader_names.name}}
+                                        </div>
+                              <div *ngIf="is_leader_names">
+                                <table  class="table">
+                                    <thead>
+                                      <tr>
+                                        <td>Name</td>
+                                        <td>Phone No.</td>
+                                        <td>Remove Option</td>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>{{leader_names.name}}</td>
+                                        <td>{{leader_names.mobile_number}}</td>
+                                        <td>Team Leader</td>
+                                    </tbody>
+                                    <tbody *ngFor="let user of is_leader_names">
+                                      <tr>
+                                        <td>{{user.name}}</td>
+                                        <td>{{user.mobile_number}}</td>
+                                        <td>
+                                          <button (click)="exit_team(user.mobile_number,1)" type="button">Remove</button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              <div *ngIf="my_team_names">
+                                  <table class="table">
+                                      <thead>
+                                        <tr>
+                                          <td>Name</td>
+                                          <td>Phone No.</td>
+                                          <td>Status</td>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                          <td>{{leader_names.name}}</td>
+                                          <td>{{leader_names.mobile_number}}</td>
+                                          <td>Team Leader</td>
+                                      </tbody>
+                                      <tbody *ngFor="let user of my_team_names">
+                                          <tr>
+                                            <td>{{user.name}}</td>
+                                            <td>{{user.mobile_number}}</td>
+                                            <td>Member</td>
+                                          </tr>
+                                        </tbody>
+  
+                                    </table>
+                                    Max Limit: 15<br>
+                                    Contact Prabhat(8115618738) in case you are not the team Member<br>
+                                  </div>
+                                </div>
+                                <div *ngIf="is_leader_names">
+                                    <div class="input-group">
+                                        <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button (click)="add_member(myInput.value,1)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                        </span>
+                                    </div>
+                                    Max Limit: 15<br>
+                                    Contact Prabhat(8115618738) in case you are not the team leader<br>
+                                </div>
+                               <br>
+                              </div>
                     </div>
                   </div>
-                <button type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="ISB" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -363,7 +458,7 @@
           <div class="container-fluid" style="width: 100%">
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                  <button type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
+                  <button (click)="my_team(1)" type="button" class="button alt" data-toggle="modal" data-target="#indigosagamodal">INDIGO SAGA</button>
               </div>
               <div class="col-sm-4">
                   <button type="button" class="button alt" data-toggle="modal" data-target="#beatthestreetmodal">BEAT THE STREET</button>
