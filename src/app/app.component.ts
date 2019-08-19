@@ -53,7 +53,7 @@ export class AppComponent {
   public name: string;
   public imageURL: string;
   public email: string;
-  private url: string = "http://api2.moodi.org/user";
+  private url: string = "https://api2.moodi.org/user";
   component = this;
   gender =['male','female']
 
@@ -80,7 +80,7 @@ export class AppComponent {
       google_id: this.gID
     })
     
-    this.http.post('http://api2.moodi.org/user/create',this.regForm.value,httpOptions)
+    this.http.post('https://api2.moodi.org/user/create',this.regForm.value,httpOptions)
     .subscribe(result =>
       {
         document.getElementById("hidePopup").click();
@@ -546,7 +546,7 @@ export class AppComponent {
   public create_team(eventid) {
     
     console.log("ok")
-    this.http.post('http://api2.moodi.org/team/create_team/'+this.gID, {
+    this.http.post('https://api2.moodi.org/team/create_team/'+this.gID, {
       mobile_number :"323232323",
       multicity:"2323232",
       event_id: eventid,
@@ -565,7 +565,7 @@ export class AppComponent {
 
   public add_member(number, eventid){
     console.log(number)
-    this.http.post('http://api2.moodi.org/team/add_member/'+this.gID, {
+    this.http.post('https://api2.moodi.org/team/add_member/'+this.gID, {
       event_id: eventid,
       member_number: number
      })
@@ -582,7 +582,7 @@ export class AppComponent {
 
   public exit_team(number, eventid){
     console.log(number)
-    this.http.post('http://api2.moodi.org/team/exit_team/'+this.gID, {
+    this.http.post('https://api2.moodi.org/team/exit_team/'+this.gID, {
       event_id: eventid,
       number: number
      })
@@ -601,7 +601,7 @@ export class AppComponent {
   public my_team(eventid){
     this.teamno=eventid;
     this.cdRef.detectChanges();
-    this.http.get('http://api2.moodi.org/team/is_leader/'+this.gID+"?event="+eventid)
+    this.http.get('https://api2.moodi.org/team/is_leader/'+this.gID+"?event="+eventid)
     .subscribe(
       data => {
         this.is_leader_names=data['members']
@@ -615,7 +615,7 @@ export class AppComponent {
         }
     )
 
-    this.http.get('http://api2.moodi.org/team/my_team/'+this.gID+"?event="+eventid)
+    this.http.get('https://api2.moodi.org/team/my_team/'+this.gID+"?event="+eventid)
     .subscribe(
       data1 => {
         this.my_team_names=data1['members']
