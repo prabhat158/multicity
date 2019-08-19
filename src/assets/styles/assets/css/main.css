@@ -4498,10 +4498,13 @@
 			.row{
 				float: left;
 				width: 49.999%;
-				margin: auto;
+				margin-top: 200px;
 			}
 			.col-sm-4{
 				padding: 5px;
+			}
+			.col-sm-4.alt{
+				margin-top: 220px;
 			}
 		}
 
@@ -4509,7 +4512,10 @@
 			.row{
 				float: left;
 				width: 49.999%;
-				margin: auto;
+				margin-top: 200px;
+			}
+			.col-sm-4.alt{
+				margin-top: 220px;
 			}
 			.col-sm-4{
 				padding: 5px;
@@ -4520,9 +4526,16 @@
 			.row{
 				float: left;
 				width: 49.999%;
-				margin: auto;
+				margin-top: 200px;
+			}
+			.col-sm-4.alt{
+				margin-top: 200px;
 			}
 			.col-sm-4{
 				padding: 5px;
 			}
+		}
+
+		#rules{
+			text-align: left;
 		}
