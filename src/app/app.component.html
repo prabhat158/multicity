@@ -58,13 +58,21 @@
                           Current Address*:
                           <input type="text" formControlName="postal_address" required>
                         </label>
-                        <label>
                             Current Year of Study*:
-                            <input type="text" formControlName="mobile_number" required>
-                          </label>
-                          Gender*
-                            <select id="country" formControlName="gender" required>
-                              <option *ngFor="let c of gender" [ngValue]="c">{{ c }}</option>
+                            <select id="country" formControlName="year_of_study"  style="background-color: black" class="mdb-select md-form">
+                              <option value="" disabled selected>Choose your option</option>
+                              <option value="First">First</option>
+                              <option value="Second">Second</option>
+                              <option value="Third">Third</option>
+                              <option value="Fourth">Fourth</option>
+                              <option value="Fifth">Fifth</option>
+                            </select>
+                            Gender*:
+                            <select id="country" formControlName="gender"  style="background-color: black" class="mdb-select md-form">
+                              <option value="" disabled selected>Choose your option</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <option value="others">Others</option>
                             </select>
                           
 
