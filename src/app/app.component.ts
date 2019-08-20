@@ -90,6 +90,8 @@ export class AppComponent {
         this.profile=result
         this.status=true;
         this.cdRef.detectChanges();
+        
+        document.getElementById("openProfileButton").click()
       },
       data => {
         console.log(data["error"])
