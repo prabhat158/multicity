@@ -69,7 +69,7 @@ export class AppComponent {
     email:new FormControl("dfsf@gmail.com"),
     present_city:new FormControl(''),
     present_college:new FormControl(''),
-    postal_address:new FormControl(''),
+    postal_address:new FormControl('Multicity'),
     dob:new FormControl('111'),
     cr_referral_code:new FormControl(''),
     status:new FormControl("multicity")
