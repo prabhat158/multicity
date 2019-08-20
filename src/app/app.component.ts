@@ -71,7 +71,8 @@ export class AppComponent {
     present_college:new FormControl(''),
     postal_address:new FormControl(''),
     dob:new FormControl('111'),
-    cr_referral_code:new FormControl('')
+    cr_referral_code:new FormControl(''),
+    status:new FormControl("multicity")
     
 
   })
@@ -82,7 +83,7 @@ export class AppComponent {
       google_id: this.gID
     })
     
-    this.http.post("https://api2.moodi.org/user/create?status='multicity'",this.regForm.value,httpOptions)
+    this.http.post("https://api2.moodi.org/user/create",this.regForm.value,httpOptions)
     .subscribe(result =>
       {
         document.getElementById("hidePopup").click();
