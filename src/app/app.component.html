@@ -1,7 +1,7 @@
 
 		<!-- Header -->
     <header id="header" style="background-color: transparent;">
-      <div class="logo"><img src="assets/styles/images/logo.png" id="logo"></div>
+      <div class="logo" style="height: 250px; width: 250px"><img src="assets/LogoAsset.png"  id="logo"></div>
       <a href="#menu"><span>Menu</span></a>
     </header>
 
@@ -89,18 +89,7 @@
           <div class="modal-content">
               <div class="modal-body">
                   <h4 class="modtitle">Profile</h4>
-                 <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
-                    <label>
-                      Name:
-                      <input type="text" formControlName="name">
-                    </label>
-                    <label>
-                      Mobile:
-                      <input type="text" formControlName="mobile_number">
-                    </label>
-                    <button type="submit" class="button alt">Submit</button>
-                    <button id="hidePopup" [hidden]="true" data-dismiss="modal"></button>
-                  </form>
+                  <button id="ISB" type="button" class="button alt" data-dismiss="modal">Close</button>
                 </div>
           </div>
         </div>
