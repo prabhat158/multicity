@@ -1747,7 +1747,7 @@
               <div id="reg_btsbho" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('IBS2')">Get Multicity ID</button>
+                          <button (click)="go_home('IBS23')">Get Multicity ID</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                           <button (click)="create_team(teamno)">create team</button><br>
@@ -1827,7 +1827,7 @@
                   </div>
         </div>
             </div>
-          <button id="IBS2" type="button" class="button alt" data-dismiss="modal">Close</button>
+          <button id="IBS23" type="button" class="button alt" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -2349,6 +2349,113 @@
       </div>
     </div>
 </div>
+<div class="modal fade" id="aagaaznagmodal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h4 class="modtitle">AAGAAZ</h4>
+          <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
+          <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#dr_aagaazn">Rules</a></li>
+              <li><a data-toggle="tab" href="#plyp_aagaazn">Queries</a></li>
+              <li><a data-toggle="tab" href="#reg_aagaazn">Register</a></li>
+            </ul>
+          
+            <div class="tab-content">
+              <div id="dr_aagaazn" class="tab-pane fade in active">
+                <p class="tabbody">TO BE ANNOUNCED</p>
+              </div>
+              <div id="plyp_aagaazn" class="tab-pane fade">
+                <p [innerHTML]='mqueries' class="tabbody"></p>
+              </div>
+              <div id="reg_aagaazn" class="tab-pane fade">
+                <div class="tabbody">
+                    <div *ngIf="status ==false">
+                          <button (click)="go_home('IBS37')">Get Multicity ID</button>
+                    </div>
+                    <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                          <button (click)="create_team(teamno)">create team</button><br>
+                          Only Team Leader should create the team<br>
+                          Team Leader can then add the Team Members<br>
+                        
+                    </div>
+                    <div style="align-content: flex-end">
+                        <div *ngIf="leader_names">
+                            Leader: {{leader_names.name}}
+                            </div>
+                  <div *ngIf="is_leader_names">
+                    <table  class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                            <td>Remove Option</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                            <td>Team Leader</td>
+                        </tbody>
+                        <tbody *ngFor="let user of is_leader_names">
+                          <tr>
+                            <td>{{user.name}}</td>
+                            <td>{{user.mobile_number}}</td>
+                            <td>
+                              <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  <div *ngIf="my_team_names">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                              <td>Status</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                              <td>Team Leader</td>
+                          </tbody>
+                          <tbody *ngFor="let user of my_team_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>Member</td>
+                              </tr>
+                            </tbody>
+
+                        </table>
+                        You are registered!<br>
+                        Team Limit: 20<br>
+                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
+                      </div>
+                    </div>
+                    <div *ngIf="is_leader_names">
+                        <div *ngIf="is_leader_names?.length < 19" class="input-group">
+                            <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                            </span>
+                        </div>
+                        You are registered!<br>
+                        Team Limit: 20<br>
+                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                    </div>
+                   <br>
+                  </div>
+        </div>
+            </div>
+          <button id="IBS37" type="button" class="button alt" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
       <div class="inner">
         <article class="box">
           <header>
@@ -2361,7 +2468,7 @@
           <div class="container-fluid" style="width: 100%">
             <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button (click)="my_team(37)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(37)" type="button" class="button alt" data-toggle="modal" data-target="#aagaaznagmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
@@ -3008,6 +3115,113 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="aagaazjaimodal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h4 class="modtitle">AAGAAZ</h4>
+              <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
+              <ul class="nav nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="#dr_aagaazj">Rules</a></li>
+                  <li><a data-toggle="tab" href="#plyp_aagaazj">Queries</a></li>
+                  <li><a data-toggle="tab" href="#reg_aagaazj">Register</a></li>
+                </ul>
+              
+                <div class="tab-content">
+                  <div id="dr_aagaazj" class="tab-pane fade in active">
+                    <p class="tabbody">TO BE ANNOUNCED</p>
+                  </div>
+                  <div id="plyp_aagaazj" class="tab-pane fade">
+                    <p [innerHTML]='mqueries' class="tabbody"></p>
+                  </div>
+                  <div id="reg_aagaazj" class="tab-pane fade">
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('IBS60')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">create team</button><br>
+                              Only Team Leader should create the team<br>
+                              Team Leader can then add the Team Members<br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+                            <div *ngIf="leader_names">
+                                Leader: {{leader_names.name}}
+                                </div>
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                                <td>Remove Option</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                                <td>Team Leader</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>
+                                  <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      <div *ngIf="my_team_names">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Status</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of my_team_names">
+                                  <tr>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.mobile_number}}</td>
+                                    <td>Member</td>
+                                  </tr>
+                                </tbody>
+
+                            </table>
+                            You are registered!<br>
+                            Team Limit: 20<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
+                          </div>
+                        </div>
+                        <div *ngIf="is_leader_names">
+                            <div *ngIf="is_leader_names?.length < 19" class="input-group">
+                                <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                </span>
+                            </div>
+                            You are registered!<br>
+                            Team Limit: 20<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                        </div>
+                       <br>
+                      </div>
+            </div>
+                </div>
+              <button id="IBS60" type="button" class="button alt" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
       <div class="inner">
         <article class="box">
           <header>
@@ -3034,7 +3248,7 @@
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button (click)="my_team(60)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(60)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazjaimodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
@@ -3065,6 +3279,113 @@
     <!--Eight/Bhubaneswar-->
     <!--Desi Beats, MI Idol, Aagaaz, Surshringar, Nrityanjali-->
     <section id="eight" class="wrapper post bg-img" data-bg="../assets/styles/images/Bhubneshwar19.jpg">
+      <div class="modal fade" id="aagaazbhumodal" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h4 class="modtitle">AAGAAZ</h4>
+                <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#dr_aagaazbhu">Rules</a></li>
+                    <li><a data-toggle="tab" href="#plyp_aagaazbhu">Queries</a></li>
+                    <li><a data-toggle="tab" href="#reg_aagaazbhu">Register</a></li>
+                  </ul>
+                
+                  <div class="tab-content">
+                    <div id="dr_aagaazbhu" class="tab-pane fade in active">
+                      <p class="tabbody">TO BE ANNOUNCED</p>
+                    </div>
+                    <div id="plyp_aagaazbhu" class="tab-pane fade">
+                      <p [innerHTML]='mqueries' class="tabbody"></p>
+                    </div>
+                    <div id="reg_aagaazbhu" class="tab-pane fade">
+                      <div class="tabbody">
+                          <div *ngIf="status ==false">
+                                <button (click)="go_home('IBS68')">Get Multicity ID</button>
+                          </div>
+                          <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                <button (click)="create_team(teamno)">create team</button><br>
+                                Only Team Leader should create the team<br>
+                                Team Leader can then add the Team Members<br>
+                              
+                          </div>
+                          <div style="align-content: flex-end">
+                              <div *ngIf="leader_names">
+                                  Leader: {{leader_names.name}}
+                                  </div>
+                        <div *ngIf="is_leader_names">
+                          <table  class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Remove Option</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of is_leader_names">
+                                <tr>
+                                  <td>{{user.name}}</td>
+                                  <td>{{user.mobile_number}}</td>
+                                  <td>
+                                    <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        <div *ngIf="my_team_names">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <td>Name</td>
+                                    <td>Phone No.</td>
+                                    <td>Status</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{leader_names.name}}</td>
+                                    <td>{{leader_names.mobile_number}}</td>
+                                    <td>Team Leader</td>
+                                </tbody>
+                                <tbody *ngFor="let user of my_team_names">
+                                    <tr>
+                                      <td>{{user.name}}</td>
+                                      <td>{{user.mobile_number}}</td>
+                                      <td>Member</td>
+                                    </tr>
+                                  </tbody>
+
+                              </table>
+                              You are registered!<br>
+                              Team Limit: 20<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
+                            </div>
+                          </div>
+                          <div *ngIf="is_leader_names">
+                              <div *ngIf="is_leader_names?.length < 19" class="input-group">
+                                  <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                  <span class="input-group-btn">
+                                      <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                  </span>
+                              </div>
+                              You are registered!<br>
+                              Team Limit: 20<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                          </div>
+                         <br>
+                        </div>
+              </div>
+                  </div>
+                <button id="IBS68" type="button" class="button alt" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+      </div>
       <div class="modal fade" id="desibeatsbhumodal" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -3261,7 +3582,7 @@
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Group Dance</span>
             </div>
             <div class="col-sm-4">
-              <button (click)="my_team(68)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+              <button (click)="my_team(68)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazbhumodal">AAGAAZ</button>
               <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
             </div>
           </div>
@@ -3296,7 +3617,7 @@
                   <div id="reg_aagaazch" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB42')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB72')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -3376,7 +3697,7 @@
                       </div>
                      </div>
                 </div>
-              <button id="ISB42" type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB72" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -3747,7 +4068,7 @@
           </div>
           <div class="row" style="margin-top:10px;margin-bottom:10px;">
               <div class="col-sm-4">
-                <button (click)="my_team(72)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazmodal">AAGAAZ</button>
+                <button (click)="my_team(72)" type="button" class="button alt" data-toggle="modal" data-target="#aagaazchmodal">AAGAAZ</button>
                 <span class="desc" style="margin-top: 0; margin-bottom: 0;">Streetplay</span>
               </div>
               <div class="col-sm-4">
