@@ -4536,6 +4536,9 @@
 			#banner p{
 				font-size: 10px;
 			}
+			.inner{
+				margin-top: 100px;
+			}
 		}
 
 		#rules{
