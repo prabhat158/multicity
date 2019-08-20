@@ -60,7 +60,7 @@ export class AppComponent {
   regForm= new FormGroup({
     name: new FormControl(''),
     mobile_number: new FormControl(''),
-    year_of_study: new FormControl('First'),
+    year_of_study: new FormControl(''),
     gender:new FormControl(''),
     zip_code:new FormControl(''),
     google_id:new FormControl("243434"),
@@ -108,7 +108,7 @@ export class AppComponent {
     gapi.load('auth2',()=>{
 
       this.auth2 = gapi.auth2.init({
-        client_id: '511498944970-b2g59f8sj5h2c20vhkim5tkrpcn9sckc.apps.googleusercontent.com',
+        client_id: '753114820338-000vf1u95gdvealolff2oo7u4ohqnu3t.apps.googleusercontent.com',
         cookiepolicy: 'single_host_origin',
         scope: 'profile',
       });
