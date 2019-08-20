@@ -205,7 +205,7 @@
                                     </table>
                                     You are registered!<br>
                                     Team Limit: 15<br>
-                                    Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                                    Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                                   </div>
                                 </div>
                                 <div *ngIf="is_leader_names">
@@ -217,7 +217,7 @@
                                     </div>
                                     You are registered!<br>
                                     Team Limit: 15<br>
-                                    Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                                    Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                                 </div>
                                <br>
                               </div>
@@ -312,7 +312,7 @@
                               </table>
                               You are registered!<br>
                               Team Limit: 13<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                             </div>
                           </div>
                           <div *ngIf="is_leader_names">
@@ -324,7 +324,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 13<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                           </div>
                          <br>
                         </div>
@@ -481,7 +481,7 @@
                               </table>
                               You are registered!<br>
                               Team Limit: 20<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                             </div>
                           </div>
                           <div *ngIf="is_leader_names">
@@ -493,7 +493,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 20<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                           </div>
                          <br>
                         </div>
@@ -523,88 +523,43 @@
                     <div id="plyp_hys" class="tab-pane fade">
                       <p [innerHTML]='hqueries' class="tabbody"></p>
                     </div>
-                    <div id="reg_hys"class="tab-pane fade">
+                    <div id="reg_hys" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
                                 <button (click)="go_home('ISB5')">Get Multicity ID</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                <button (click)="create_team(teamno)">create team</button><br>
-                                Only Team Leader should create the team<br>
-                                Team Leader can then add the Team Members<br>
+                                <button (click)="create_team(teamno)">Register</button><br>
                               
                           </div>
                           <div style="align-content: flex-end">
-                              <div *ngIf="leader_names">
-                                  Leader: {{leader_names.name}}
-                                  </div>
+
                         <div *ngIf="is_leader_names">
                           <table  class="table">
                               <thead>
                                 <tr>
                                   <td>Name</td>
                                   <td>Phone No.</td>
-                                  <td>Remove Option</td>
                                 </tr>
                               </thead>
                               <tbody>
                                   <td>{{leader_names.name}}</td>
                                   <td>{{leader_names.mobile_number}}</td>
-                                  <td>Team Leader</td>
                               </tbody>
                               <tbody *ngFor="let user of is_leader_names">
                                 <tr>
                                   <td>{{user.name}}</td>
                                   <td>{{user.mobile_number}}</td>
-                                  <td>
-                                    <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
-                                  </td>
                                 </tr>
                               </tbody>
                             </table>
+                            You are registered!
                           </div>
-                        <div *ngIf="my_team_names">
-                            <table class="table">
-                                <thead>
-                                  <tr>
-                                    <td>Name</td>
-                                    <td>Phone No.</td>
-                                    <td>Status</td>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                    <td>{{leader_names.name}}</td>
-                                    <td>{{leader_names.mobile_number}}</td>
-                                    <td>Team Leader</td>
-                                </tbody>
-                                <tbody *ngFor="let user of my_team_names">
-                                    <tr>
-                                      <td>{{user.name}}</td>
-                                      <td>{{user.mobile_number}}</td>
-                                      <td>Member</td>
-                                    </tr>
-                                  </tbody>
-        
-                              </table>
-                              You are registered!<br>
-                              Team Limit: 5<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
-                            </div>
                           </div>
-                          <div *ngIf="is_leader_names">
-                              <div *ngIf="is_leader_names?.length < 4" class="input-group">
-                                  <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
-                                  <span class="input-group-btn">
-                                      <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
-                                  </span>
-                              </div>
-                              You are registered!<br>
-                              Team Limit: 5<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
-                          </div>
+                          
                          <br>
                         </div>
-                       </div>
+                    </div>
                   </div>
                 <button id="ISB5" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
@@ -820,7 +775,7 @@
                               </table>
                               You are registered!<br>
                               Team Limit: 15<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                             </div>
                           </div>
                           <div *ngIf="is_leader_names">
@@ -832,7 +787,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 15<br>
-                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                           </div>
                          <br>
                         </div>
@@ -1389,7 +1344,7 @@
                         </table>
                         You are registered!<br>
                         Team Limit: 2<br>
-                        Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                       </div>
                     </div>
                     <div *ngIf="is_leader_names">
@@ -1401,7 +1356,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 2<br>
-                        Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                     </div>
                    <br>
                   </div>
@@ -1559,7 +1514,7 @@
                       </table>
                       You are registered!<br>
                       Team Limit: 8<br>
-                      Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                      Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                     </div>
                   </div>
                   <div *ngIf="is_leader_names">
@@ -1571,7 +1526,7 @@
                       </div>
                       You are registered!<br>
                       Team Limit: 8<br>
-                      Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                      Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                   </div>
                  <br>
                 </div>
@@ -2265,7 +2220,7 @@
                         </table>
                         You are registered!<br>
                         Team Limit: 15<br>
-                        Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                       </div>
                     </div>
                     <div *ngIf="is_leader_names">
@@ -2277,7 +2232,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 15<br>
-                        Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                     </div>
                    <br>
                   </div>
@@ -2491,7 +2446,7 @@
                       </table>
                       You are registered!<br>
                       Team Limit: 23<br>
-                      Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                      Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                     </div>
                   </div>
                   <div *ngIf="is_leader_names">
@@ -2503,7 +2458,7 @@
                       </div>
                       You are registered!<br>
                       Team Limit: 23<br>
-                      Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                      Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                   </div>
                  <br>
                 </div>
@@ -2735,7 +2690,7 @@
                             </table>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                           </div>
                         </div>
                         <div *ngIf="is_leader_names">
@@ -2747,7 +2702,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                         </div>
                        <br>
                       </div>
@@ -3087,7 +3042,7 @@
                             </table>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                           </div>
                         </div>
                         <div *ngIf="is_leader_names">
@@ -3099,7 +3054,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                         </div>
                        <br>
                       </div>
@@ -3295,7 +3250,7 @@
                             </table>
                             You are registered!<br>
                             Team Limit: 6<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                           </div>
                         </div>
                         <div *ngIf="is_leader_names">
@@ -3307,7 +3262,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 6<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                         </div>
                        <br>
                       </div>
@@ -3465,7 +3420,7 @@
                             </table>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                           </div>
                         </div>
                         <div *ngIf="is_leader_names">
@@ -3477,7 +3432,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                         </div>
                        <br>
                       </div>
@@ -3635,7 +3590,7 @@
                             </table>
                             You are registered!<br>
                             Team Limit: 12<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Member<br>
                           </div>
                         </div>
                         <div *ngIf="is_leader_names">
@@ -3647,7 +3602,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 12<br>
-                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
                         </div>
                        <br>
                       </div>
