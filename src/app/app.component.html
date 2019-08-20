@@ -1,7 +1,7 @@
 
 		<!-- Header -->
     <header id="header" style="background-color: transparent;">
-      <!-- <div class="logo" style="height: 250px; width: 250px"><img src="assets/LogoAsset.png"  id="logo"></div> -->
+      <div class="logo" style="z-index: -1;width: 250px"><img src="assets/Logounit.png"  id="logo"></div>
       <a href="#menu"><span>Menu</span></a>
     </header>
 
@@ -90,11 +90,10 @@
           <div class="modal-content">
               <div class="modal-body">
                   <h4 class="modtitle">Profile</h4>
-                  <p>Name: Afdghhm dsfgfhj</p>
-                  <p>Mobile: 1456321485</p>
-                  <p>Email-ID: dsfdgh@dfbg.com</p>
-                  <p>Multicity-ID: 1256963</p>
-                  <p>Current College: sergthyj sdfghg, grdhtfg</p>
+                  <p>Name: {{profile?.name}}</p>
+                  <p>Mobile: {{profile?.mobile_number}}</p>
+                  <p>Email-ID: {{profile?.email}}</p>
+                  <p>Multicity-ID: {{profile?.id}}</p>
                   <button id="ISB" type="button" class="button alt" data-dismiss="modal">Close</button>
                 </div>
           </div>
@@ -144,7 +143,7 @@
                     <div id="reg_is" class="tab-pane fade">
                             <div class="tabbody">
                                 <div *ngIf="status ==false">
-                                      <button (click)="go_home('ISB')">Get Multicity ID</button>
+                                      <button (click)="go_home('IBS')">Get Multicity ID</button>
                                 </div>
                                 <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                       <button (click)="create_team(teamno)">create team</button><br>
@@ -224,7 +223,7 @@
                               </div>
                     </div>
                   </div>
-                <button id="ISB" type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="IBS" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -251,7 +250,7 @@
                     <div id="reg_bts" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('ISB2')">Get Multicity ID</button>
+                                <button (click)="go_home('IBS2')">Get Multicity ID</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team(teamno)">create team</button><br>
@@ -331,7 +330,7 @@
                         </div>
               </div>
                   </div>
-                <button id="ISB2" type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="IBS2" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -358,10 +357,10 @@
                     <div id="reg_mii" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('ISB3')">Get Multicity ID</button>
+                                <button (click)="go_home('IBS3')">Get Multicity ID</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                <button (click)="create_team(3)">Register</button><br>
+                                <button (click)="create_team(teamno)">Register</button><br>
                               
                           </div>
                           <div style="align-content: flex-end">
@@ -524,11 +523,90 @@
                     <div id="plyp_hys" class="tab-pane fade">
                       <p [innerHTML]='hqueries' class="tabbody"></p>
                     </div>
-                    <div id="reg_hys" class="tab-pane fade">
-                      <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    </div>
+                    <div id="reg_hys"class="tab-pane fade">
+                      <div class="tabbody">
+                          <div *ngIf="status ==false">
+                                <button (click)="go_home('ISB5')">Get Multicity ID</button>
+                          </div>
+                          <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                <button (click)="create_team(teamno)">create team</button><br>
+                                Only Team Leader should create the team<br>
+                                Team Leader can then add the Team Members<br>
+                              
+                          </div>
+                          <div style="align-content: flex-end">
+                              <div *ngIf="leader_names">
+                                  Leader: {{leader_names.name}}
+                                  </div>
+                        <div *ngIf="is_leader_names">
+                          <table  class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Remove Option</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of is_leader_names">
+                                <tr>
+                                  <td>{{user.name}}</td>
+                                  <td>{{user.mobile_number}}</td>
+                                  <td>
+                                    <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        <div *ngIf="my_team_names">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <td>Name</td>
+                                    <td>Phone No.</td>
+                                    <td>Status</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{leader_names.name}}</td>
+                                    <td>{{leader_names.mobile_number}}</td>
+                                    <td>Team Leader</td>
+                                </tbody>
+                                <tbody *ngFor="let user of my_team_names">
+                                    <tr>
+                                      <td>{{user.name}}</td>
+                                      <td>{{user.mobile_number}}</td>
+                                      <td>Member</td>
+                                    </tr>
+                                  </tbody>
+        
+                              </table>
+                              You are registered!<br>
+                              Team Limit: 5<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            </div>
+                          </div>
+                          <div *ngIf="is_leader_names">
+                              <div *ngIf="is_leader_names?.length < 4" class="input-group">
+                                  <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                  <span class="input-group-btn">
+                                      <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                  </span>
+                              </div>
+                              You are registered!<br>
+                              Team Limit: 5<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                          </div>
+                         <br>
+                        </div>
+                       </div>
                   </div>
-                <button id="IBS5" type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="ISB5" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -558,7 +636,7 @@
                                   <button (click)="go_home('ISB6')">Get Multicity ID</button>
                             </div>
                             <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                  <button (click)="create_team(6)">Register</button><br>
+                                  <button (click)="create_team(teamno)">Register</button><br>
                                 
                             </div>
                             <div style="align-content: flex-end">
@@ -615,10 +693,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_sti" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB8')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button id="IBS8" type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB8" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -643,10 +756,89 @@
                       <p [innerHTML]='mqueries' class="tabbody"></p>
                     </div>
                     <div id="reg_db" class="tab-pane fade">
-                      <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    </div>
+                      <div class="tabbody">
+                          <div *ngIf="status ==false">
+                                <button (click)="go_home('ISB7')">Get Multicity ID</button>
+                          </div>
+                          <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                                <button (click)="create_team(teamno)">create team</button><br>
+                                Only Team Leader should create the team<br>
+                                Team Leader can then add the Team Members<br>
+                              
+                          </div>
+                          <div style="align-content: flex-end">
+                              <div *ngIf="leader_names">
+                                  Leader: {{leader_names.name}}
+                                  </div>
+                        <div *ngIf="is_leader_names">
+                          <table  class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Remove Option</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of is_leader_names">
+                                <tr>
+                                  <td>{{user.name}}</td>
+                                  <td>{{user.mobile_number}}</td>
+                                  <td>
+                                    <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        <div *ngIf="my_team_names">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <td>Name</td>
+                                    <td>Phone No.</td>
+                                    <td>Status</td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <td>{{leader_names.name}}</td>
+                                    <td>{{leader_names.mobile_number}}</td>
+                                    <td>Team Leader</td>
+                                </tbody>
+                                <tbody *ngFor="let user of my_team_names">
+                                    <tr>
+                                      <td>{{user.name}}</td>
+                                      <td>{{user.mobile_number}}</td>
+                                      <td>Member</td>
+                                    </tr>
+                                  </tbody>
+        
+                              </table>
+                              You are registered!<br>
+                              Team Limit: 15<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                            </div>
+                          </div>
+                          <div *ngIf="is_leader_names">
+                              <div *ngIf="is_leader_names?.length < 14" class="input-group">
+                                  <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                  <span class="input-group-btn">
+                                      <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                  </span>
+                              </div>
+                              You are registered!<br>
+                              Team Limit: 15<br>
+                              Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                          </div>
+                         <br>
+                        </div>
+                       </div>
                   </div>
-                <button id="IBS7" type="button" class="button alt" data-dismiss="modal">Close</button>
+                <button id="ISB7" type="button" class="button alt" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -671,8 +863,42 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_mrmsbang" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('IBS9')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                       <br>
+                      </div>
                   </div>
+
                 </div>
               <button id="IBS9" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
@@ -765,10 +991,45 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_mrmskol" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB15')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB15" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -792,11 +1053,46 @@
             <div id="plyp_minem" class="tab-pane fade">
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
-            <div id="reg_minem" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            <div id="reg_minem"class="tab-pane fade">
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB16')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id ="ISB16" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -903,10 +1199,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_nr" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB19')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB19" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -931,10 +1262,45 @@
                   <p [innerHTML]='mqueries' class="tabbody"></p>
                 </div>
                 <div id="reg_mitb" class="tab-pane fade">
-                  <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  <div class="tabbody">
+                      <div *ngIf="status ==false">
+                            <button (click)="go_home('ISB21')">Get Multicity ID</button>
+                      </div>
+                      <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                            <button (click)="create_team(teamno)">Register</button><br>
+                          
+                      </div>
+                      <div style="align-content: flex-end">
+
+                    <div *ngIf="is_leader_names">
+                      <table  class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                          </tbody>
+                          <tbody *ngFor="let user of is_leader_names">
+                            <tr>
+                              <td>{{user.name}}</td>
+                              <td>{{user.mobile_number}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        You are registered!
+                      </div>
+                      </div>
+                      
+                     <br>
+                    </div>
                 </div>
+
               </div>
-            <button type="button" class="button alt" data-dismiss="modal">Close</button>
+            <button id="ISB21" type="button" class="button alt" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -959,10 +1325,89 @@
                 <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_dt" class="tab-pane fade">
-                <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-              </div>
+                <div class="tabbody">
+                    <div *ngIf="status ==false">
+                          <button (click)="go_home('ISB22')">Get Multicity ID</button>
+                    </div>
+                    <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                          <button (click)="create_team(teamno)">create team</button><br>
+                          Only Team Leader should create the team<br>
+                          Team Leader can then add the Team Members<br>
+                        
+                    </div>
+                    <div style="align-content: flex-end">
+                        <div *ngIf="leader_names">
+                            Leader: {{leader_names.name}}
+                            </div>
+                  <div *ngIf="is_leader_names">
+                    <table  class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                            <td>Remove Option</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                            <td>Team Leader</td>
+                        </tbody>
+                        <tbody *ngFor="let user of is_leader_names">
+                          <tr>
+                            <td>{{user.name}}</td>
+                            <td>{{user.mobile_number}}</td>
+                            <td>
+                              <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  <div *ngIf="my_team_names">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                              <td>Status</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                              <td>Team Leader</td>
+                          </tbody>
+                          <tbody *ngFor="let user of my_team_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>Member</td>
+                              </tr>
+                            </tbody>
+  
+                        </table>
+                        You are registered!<br>
+                        Team Limit: 2<br>
+                        Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                      </div>
+                    </div>
+                    <div *ngIf="is_leader_names">
+                        <div *ngIf="is_leader_names?.length < 1" class="input-group">
+                            <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                            </span>
+                        </div>
+                        You are registered!<br>
+                        Team Limit: 2<br>
+                        Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                    </div>
+                   <br>
+                  </div>
+                 </div>
             </div>
-          <button type="button" class="button alt" data-dismiss="modal">Close</button>
+          <button id="ISB22" type="button" class="button alt" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -987,10 +1432,45 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_sur" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB24')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB24" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1015,10 +1495,89 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_mt" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-            </div>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB25')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">create team</button><br>
+                        Only Team Leader should create the team<br>
+                        Team Leader can then add the Team Members<br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+                      <div *ngIf="leader_names">
+                          Leader: {{leader_names.name}}
+                          </div>
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                          <td>Remove Option</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                          <td>Team Leader</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                          <td>
+                            <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                <div *ngIf="my_team_names">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                            <td>Status</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                            <td>Team Leader</td>
+                        </tbody>
+                        <tbody *ngFor="let user of my_team_names">
+                            <tr>
+                              <td>{{user.name}}</td>
+                              <td>{{user.mobile_number}}</td>
+                              <td>Member</td>
+                            </tr>
+                          </tbody>
+
+                      </table>
+                      You are registered!<br>
+                      Team Limit: 8<br>
+                      Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                    </div>
+                  </div>
+                  <div *ngIf="is_leader_names">
+                      <div *ngIf="is_leader_names?.length < 7" class="input-group">
+                          <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                          <span class="input-group-btn">
+                              <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                          </span>
+                      </div>
+                      You are registered!<br>
+                      Team Limit: 8<br>
+                      Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                  </div>
+                 <br>
+                </div>
+               </div>
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB25" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1043,10 +1602,45 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_rang" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB26')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB26" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1071,10 +1665,45 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_ml" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB27')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB27" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1099,10 +1728,45 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_stib" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB20')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB20" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1186,10 +1850,45 @@
                 <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_mrmspune" class="tab-pane fade">
-                <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                <div class="tabbody">
+                    <div *ngIf="status ==false">
+                          <button (click)="go_home('ISB33')">Get Multicity ID</button>
+                    </div>
+                    <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                          <button (click)="create_team(teamno)">Register</button><br>
+                        
+                    </div>
+                    <div style="align-content: flex-end">
+
+                  <div *ngIf="is_leader_names">
+                    <table  class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                        </tbody>
+                        <tbody *ngFor="let user of is_leader_names">
+                          <tr>
+                            <td>{{user.name}}</td>
+                            <td>{{user.mobile_number}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      You are registered!
+                    </div>
+                    </div>
+                    
+                   <br>
+                  </div>
               </div>
+
             </div>
-          <button type="button" class="button alt" data-dismiss="modal">Close</button>
+          <button id="ISB33" type="button" class="button alt" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -1376,10 +2075,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_mrmsmin" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB44')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB44" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1404,10 +2138,45 @@
                   <p [innerHTML]='mqueries' class="tabbody"></p>
                 </div>
                 <div id="reg_miin" class="tab-pane fade">
-                  <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  <div class="tabbody">
+                      <div *ngIf="status ==false">
+                            <button (click)="go_home('ISB39')">Get Multicity ID</button>
+                      </div>
+                      <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                            <button (click)="create_team(teamno)">Register</button><br>
+                          
+                      </div>
+                      <div style="align-content: flex-end">
+
+                    <div *ngIf="is_leader_names">
+                      <table  class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                          </tbody>
+                          <tbody *ngFor="let user of is_leader_names">
+                            <tr>
+                              <td>{{user.name}}</td>
+                              <td>{{user.mobile_number}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        You are registered!
+                      </div>
+                      </div>
+                      
+                     <br>
+                    </div>
                 </div>
+
               </div>
-            <button type="button" class="button alt" data-dismiss="modal">Close</button>
+            <button id="ISB39" type="button" class="button alt" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -1432,10 +2201,89 @@
                 <p [innerHTML]='mqueries' class="tabbody"></p>
               </div>
               <div id="reg_dbn" class="tab-pane fade">
-                <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-              </div>
+                <div class="tabbody">
+                    <div *ngIf="status ==false">
+                          <button (click)="go_home('ISB42')">Get Multicity ID</button>
+                    </div>
+                    <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                          <button (click)="create_team(teamno)">create team</button><br>
+                          Only Team Leader should create the team<br>
+                          Team Leader can then add the Team Members<br>
+                        
+                    </div>
+                    <div style="align-content: flex-end">
+                        <div *ngIf="leader_names">
+                            Leader: {{leader_names.name}}
+                            </div>
+                  <div *ngIf="is_leader_names">
+                    <table  class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                            <td>Remove Option</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                            <td>Team Leader</td>
+                        </tbody>
+                        <tbody *ngFor="let user of is_leader_names">
+                          <tr>
+                            <td>{{user.name}}</td>
+                            <td>{{user.mobile_number}}</td>
+                            <td>
+                              <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  <div *ngIf="my_team_names">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                              <td>Status</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                              <td>Team Leader</td>
+                          </tbody>
+                          <tbody *ngFor="let user of my_team_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>Member</td>
+                              </tr>
+                            </tbody>
+  
+                        </table>
+                        You are registered!<br>
+                        Team Limit: 15<br>
+                        Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                      </div>
+                    </div>
+                    <div *ngIf="is_leader_names">
+                        <div *ngIf="is_leader_names?.length < 14" class="input-group">
+                            <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                            </span>
+                        </div>
+                        You are registered!<br>
+                        Team Limit: 15<br>
+                        Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                    </div>
+                   <br>
+                  </div>
+                 </div>
             </div>
-          <button type="button" class="button alt" data-dismiss="modal">Close</button>
+          <button id="ISB42" type="button" class="button alt" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -1516,10 +2364,45 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_mrmsdel" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB53')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">Register</button><br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    You are registered!
+                  </div>
+                  </div>
+                  
+                 <br>
+                </div>
             </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB53" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1544,10 +2427,90 @@
               <p [innerHTML]='mqueries' class="tabbody"></p>
             </div>
             <div id="reg_con" class="tab-pane fade">
-              <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-            </div>
+              <div class="tabbody">
+                  <div *ngIf="status ==false">
+                        <button (click)="go_home('ISB55')">Get Multicity ID</button>
+                  </div>
+                  <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                        <button (click)="create_team(teamno)">create team</button><br>
+                        Only Team Leader should create the team<br>
+                        Team Leader can then add the Team Members<br>
+                      
+                  </div>
+                  <div style="align-content: flex-end">
+                      <div *ngIf="leader_names">
+                          Leader: {{leader_names.name}}
+                          </div>
+                <div *ngIf="is_leader_names">
+                  <table  class="table">
+                      <thead>
+                        <tr>
+                          <td>Name</td>
+                          <td>Phone No.</td>
+                          <td>Remove Option</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <td>{{leader_names.name}}</td>
+                          <td>{{leader_names.mobile_number}}</td>
+                          <td>Team Leader</td>
+                      </tbody>
+                      <tbody *ngFor="let user of is_leader_names">
+                        <tr>
+                          <td>{{user.name}}</td>
+                          <td>{{user.mobile_number}}</td>
+                          <td>
+                            <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                <div *ngIf="my_team_names">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <td>Name</td>
+                            <td>Phone No.</td>
+                            <td>Status</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <td>{{leader_names.name}}</td>
+                            <td>{{leader_names.mobile_number}}</td>
+                            <td>Team Leader</td>
+                        </tbody>
+                        <tbody *ngFor="let user of my_team_names">
+                            <tr>
+                              <td>{{user.name}}</td>
+                              <td>{{user.mobile_number}}</td>
+                              <td>Member</td>
+                            </tr>
+                          </tbody>
+
+                      </table>
+                      You are registered!<br>
+                      Team Limit: 23<br>
+                      Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                    </div>
+                  </div>
+                  <div *ngIf="is_leader_names">
+                      <div *ngIf="is_leader_names?.length < 22" class="input-group">
+                          <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                          <span class="input-group-btn">
+                              <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                          </span>
+                      </div>
+                      You are registered!<br>
+                      Team Limit: 23<br>
+                      Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                  </div>
+                 <br>
+                </div>
+               </div>
+
           </div>
-        <button type="button" class="button alt" data-dismiss="modal">Close</button>
+        <button id="ISB55" type="button" class="button alt" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -1645,10 +2608,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_tco" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB58')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB58" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1673,10 +2671,89 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_dbj" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB59')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">create team</button><br>
+                              Only Team Leader should create the team<br>
+                              Team Leader can then add the Team Members<br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+                            <div *ngIf="leader_names">
+                                Leader: {{leader_names.name}}
+                                </div>
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                                <td>Remove Option</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                                <td>Team Leader</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>
+                                  <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      <div *ngIf="my_team_names">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Status</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of my_team_names">
+                                  <tr>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.mobile_number}}</td>
+                                    <td>Member</td>
+                                  </tr>
+                                </tbody>
+      
+                            </table>
+                            You are registered!<br>
+                            Team Limit: 15<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                          </div>
+                        </div>
+                        <div *ngIf="is_leader_names">
+                            <div *ngIf="is_leader_names?.length < 14" class="input-group">
+                                <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                </span>
+                            </div>
+                            You are registered!<br>
+                            Team Limit: 15<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        </div>
+                       <br>
+                      </div>
+                     </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB59" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1701,10 +2778,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_miij" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB57')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB57" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1729,10 +2841,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_huj" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB63')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB63" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1757,10 +2904,45 @@
                   <p [innerHTML]='mqueries' class="tabbody"></p>
                 </div>
                 <div id="reg_stij" class="tab-pane fade">
-                  <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  <div class="tabbody">
+                      <div *ngIf="status ==false">
+                            <button (click)="go_home('ISB62')">Get Multicity ID</button>
+                      </div>
+                      <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                            <button (click)="create_team(teamno)">Register</button><br>
+                          
+                      </div>
+                      <div style="align-content: flex-end">
+
+                    <div *ngIf="is_leader_names">
+                      <table  class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                          </tbody>
+                          <tbody *ngFor="let user of is_leader_names">
+                            <tr>
+                              <td>{{user.name}}</td>
+                              <td>{{user.mobile_number}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        You are registered!
+                      </div>
+                      </div>
+                      
+                     <br>
+                    </div>
                 </div>
+
               </div>
-            <button type="button" class="button alt" data-dismiss="modal">Close</button>
+            <button id="ISB62" type="button" class="button alt" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -1840,11 +3022,90 @@
                   <div id="plyp_dbbhu" class="tab-pane fade">
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
-                  <div id="reg_dbbhu" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
+                  <div id="reg_dbbhu"class="tab-pane fade">
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB67')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">create team</button><br>
+                              Only Team Leader should create the team<br>
+                              Team Leader can then add the Team Members<br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+                            <div *ngIf="leader_names">
+                                Leader: {{leader_names.name}}
+                                </div>
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                                <td>Remove Option</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                                <td>Team Leader</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>
+                                  <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      <div *ngIf="my_team_names">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Status</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of my_team_names">
+                                  <tr>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.mobile_number}}</td>
+                                    <td>Member</td>
+                                  </tr>
+                                </tbody>
+      
+                            </table>
+                            You are registered!<br>
+                            Team Limit: 15<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                          </div>
+                        </div>
+                        <div *ngIf="is_leader_names">
+                            <div *ngIf="is_leader_names?.length < 14" class="input-group">
+                                <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                </span>
+                            </div>
+                            You are registered!<br>
+                            Team Limit: 15<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        </div>
+                       <br>
+                      </div>
+                     </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB67" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1869,10 +3130,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_miibhu" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB65')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB65" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1935,10 +3231,89 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_aagaazch" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB42')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">create team</button><br>
+                              Only Team Leader should create the team<br>
+                              Team Leader can then add the Team Members<br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+                            <div *ngIf="leader_names">
+                                Leader: {{leader_names.name}}
+                                </div>
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                                <td>Remove Option</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                                <td>Team Leader</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>
+                                  <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      <div *ngIf="my_team_names">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Status</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of my_team_names">
+                                  <tr>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.mobile_number}}</td>
+                                    <td>Member</td>
+                                  </tr>
+                                </tbody>
+      
+                            </table>
+                            You are registered!<br>
+                            Team Limit: 6<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                          </div>
+                        </div>
+                        <div *ngIf="is_leader_names">
+                            <div *ngIf="is_leader_names?.length < 5" class="input-group">
+                                <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                </span>
+                            </div>
+                            You are registered!<br>
+                            Team Limit: 6<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        </div>
+                       <br>
+                      </div>
+                     </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB42" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -1963,10 +3338,45 @@
                   <p [innerHTML]='mqueries' class="tabbody"></p>
                 </div>
                 <div id="reg_huch" class="tab-pane fade">
-                  <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                  <div class="tabbody">
+                      <div *ngIf="status ==false">
+                            <button (click)="go_home('ISB75')">Get Multicity ID</button>
+                      </div>
+                      <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                            <button (click)="create_team(teamno)">Register</button><br>
+                          
+                      </div>
+                      <div style="align-content: flex-end">
+
+                    <div *ngIf="is_leader_names">
+                      <table  class="table">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Phone No.</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              <td>{{leader_names.name}}</td>
+                              <td>{{leader_names.mobile_number}}</td>
+                          </tbody>
+                          <tbody *ngFor="let user of is_leader_names">
+                            <tr>
+                              <td>{{user.name}}</td>
+                              <td>{{user.mobile_number}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        You are registered!
+                      </div>
+                      </div>
+                      
+                     <br>
+                    </div>
                 </div>
+
               </div>
-            <button type="button" class="button alt" data-dismiss="modal">Close</button>
+            <button id="ISB75" type="button" class="button alt" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -1991,10 +3401,89 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_dbch" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB71')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">create team</button><br>
+                              Only Team Leader should create the team<br>
+                              Team Leader can then add the Team Members<br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+                            <div *ngIf="leader_names">
+                                Leader: {{leader_names.name}}
+                                </div>
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                                <td>Remove Option</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                                <td>Team Leader</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>
+                                  <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      <div *ngIf="my_team_names">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Status</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of my_team_names">
+                                  <tr>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.mobile_number}}</td>
+                                    <td>Member</td>
+                                  </tr>
+                                </tbody>
+      
+                            </table>
+                            You are registered!<br>
+                            Team Limit: 15<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                          </div>
+                        </div>
+                        <div *ngIf="is_leader_names">
+                            <div *ngIf="is_leader_names?.length < 14" class="input-group">
+                                <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                </span>
+                            </div>
+                            You are registered!<br>
+                            Team Limit: 15<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        </div>
+                       <br>
+                      </div>
+                     </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB71" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -2019,10 +3508,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_miich" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB69')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB69" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -2047,10 +3571,89 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_dc" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                  </div>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB74')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">create team</button><br>
+                              Only Team Leader should create the team<br>
+                              Team Leader can then add the Team Members<br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+                            <div *ngIf="leader_names">
+                                Leader: {{leader_names.name}}
+                                </div>
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                                <td>Remove Option</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                                <td>Team Leader</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                                <td>
+                                  <button (click)="exit_team(user.mobile_number,teamno)" type="button">Remove</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      <div *ngIf="my_team_names">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <td>Name</td>
+                                  <td>Phone No.</td>
+                                  <td>Status</td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <td>{{leader_names.name}}</td>
+                                  <td>{{leader_names.mobile_number}}</td>
+                                  <td>Team Leader</td>
+                              </tbody>
+                              <tbody *ngFor="let user of my_team_names">
+                                  <tr>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.mobile_number}}</td>
+                                    <td>Member</td>
+                                  </tr>
+                                </tbody>
+      
+                            </table>
+                            You are registered!<br>
+                            Team Limit: 12<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Member<br>
+                          </div>
+                        </div>
+                        <div *ngIf="is_leader_names">
+                            <div *ngIf="is_leader_names?.length < 11" class="input-group">
+                                <input #myInput  placeholder="Registered Mobile No."  type="text" class="form-control">
+                                <span class="input-group-btn">
+                                    <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
+                                </span>
+                            </div>
+                            You are registered!<br>
+                            Team Limit: 12<br>
+                            Contact Prabhat(8115618738) in case you are not the Team Leader<br>
+                        </div>
+                       <br>
+                      </div>
+                     </div>
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB74" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -2128,10 +3731,45 @@
                     <p [innerHTML]='mqueries' class="tabbody"></p>
                   </div>
                   <div id="reg_mrmsmum" class="tab-pane fade">
-                    <p class="tabbody">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <div class="tabbody">
+                        <div *ngIf="status ==false">
+                              <button (click)="go_home('ISB77')">Get Multicity ID</button>
+                        </div>
+                        <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
+                              <button (click)="create_team(teamno)">Register</button><br>
+                            
+                        </div>
+                        <div style="align-content: flex-end">
+
+                      <div *ngIf="is_leader_names">
+                        <table  class="table">
+                            <thead>
+                              <tr>
+                                <td>Name</td>
+                                <td>Phone No.</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td>{{leader_names.name}}</td>
+                                <td>{{leader_names.mobile_number}}</td>
+                            </tbody>
+                            <tbody *ngFor="let user of is_leader_names">
+                              <tr>
+                                <td>{{user.name}}</td>
+                                <td>{{user.mobile_number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          You are registered!
+                        </div>
+                        </div>
+                        
+                       <br>
+                      </div>
                   </div>
+
                 </div>
-              <button type="button" class="button alt" data-dismiss="modal">Close</button>
+              <button id="ISB77" type="button" class="button alt" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

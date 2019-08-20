@@ -46,6 +46,8 @@ export class AppComponent {
   public elementid:any='ISB';
   public teamno:any;
 
+  public profile:any;
+
   public leader_names:any;
   public is_leader_names:any;
   public status: boolean=false;
@@ -69,7 +71,8 @@ export class AppComponent {
     present_college:new FormControl(''),
     postal_address:new FormControl(''),
     dob:new FormControl('111'),
-    cr_referral_code:new FormControl('')
+    cr_referral_code:new FormControl(''),
+    status:new FormControl("multicity")
     
 
   })
@@ -80,10 +83,11 @@ export class AppComponent {
       google_id: this.gID
     })
     
-    this.http.post("https://api2.moodi.org/user/create?status='multicity'",this.regForm.value,httpOptions)
+    this.http.post("https://api2.moodi.org/user/create",this.regForm.value,httpOptions)
     .subscribe(result =>
       {
         document.getElementById("hidePopup").click();
+        this.profile=result
         this.status=true;
         this.cdRef.detectChanges();
       },
@@ -144,6 +148,8 @@ export class AppComponent {
     .subscribe(
       data => {
         document.getElementById("openProfileButton").click()
+        console.log(data)
+        this.profile=data
         this.status=true;
         this.cdRef.detectChanges();
         },
