@@ -533,7 +533,7 @@ export class AppComponent {
   <p>It is advised that you register in advance to confirm your slot as there are limited slots available</p>
   
   <b>Can I participate in these competitions directly during Mood Indigo?</b><br>
-  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itelf. Getting a slot on-ground for these cities will be very difficult.</p>`;
+  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. Getting a slot on-ground for these cities will be very difficult.</p>`;
 
   hqueries = `<b>What about the eliminations of other competitions?</b><br>
   <p>Eliminations to all other competitions will be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
@@ -548,7 +548,7 @@ export class AppComponent {
   <p>No.</p>
   
   <b>Can I participate in these competitions directly during Mood Indigo?</b><br>
-  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itelf. Getting a slot on-ground for these cities will be very difficult.</p>`;
+  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. Getting a slot on-ground for these cities will be very difficult.</p>`;
   // ***********************************************************************************************
 
   public create_team(eventid) {
