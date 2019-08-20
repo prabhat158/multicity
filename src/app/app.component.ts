@@ -46,6 +46,8 @@ export class AppComponent {
   public elementid:any='ISB';
   public teamno:any;
 
+  public profile:any;
+
   public leader_names:any;
   public is_leader_names:any;
   public status: boolean=false;
@@ -84,6 +86,7 @@ export class AppComponent {
     .subscribe(result =>
       {
         document.getElementById("hidePopup").click();
+        this.profile=result
         this.status=true;
         this.cdRef.detectChanges();
       },
@@ -144,6 +147,8 @@ export class AppComponent {
     .subscribe(
       data => {
         document.getElementById("openProfileButton").click()
+        console.log(data)
+        this.profile=data
         this.status=true;
         this.cdRef.detectChanges();
         },
