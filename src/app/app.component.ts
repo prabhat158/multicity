@@ -80,7 +80,7 @@ export class AppComponent {
       google_id: this.gID
     })
     
-    this.http.post('https://api2.moodi.org/user/create',this.regForm.value,httpOptions)
+    this.http.post("https://api2.moodi.org/user/create?status='multicity'",this.regForm.value,httpOptions)
     .subscribe(result =>
       {
         document.getElementById("hidePopup").click();
