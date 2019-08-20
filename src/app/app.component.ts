@@ -43,6 +43,8 @@ export class AppComponent {
   If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. Getting a slot on-ground for these cities will be very difficult.`;
  
   public my_team_names:any;
+  public elementid:any='ISB';
+  public teamno:any;
 
   public leader_names:any;
   public is_leader_names:any;
@@ -51,23 +53,24 @@ export class AppComponent {
   public name: string;
   public imageURL: string;
   public email: string;
-  private url: string = "http://192.168.43.245:8000/user";
+  private url: string = "https://api2.moodi.org/user";
   component = this;
+  gender =['male','female']
 
   regForm= new FormGroup({
     name: new FormControl(''),
     mobile_number: new FormControl(''),
-    year_of_study: new FormControl('First'),
-    gender:new FormControl('Male'),
-    zip_code:new FormControl(142453),
+    year_of_study: new FormControl(''),
+    gender:new FormControl(''),
+    zip_code:new FormControl(''),
     google_id:new FormControl("243434"),
     email:new FormControl("dfsf@gmail.com"),
-    present_city:new FormControl('Mumbai'),
-    present_college:new FormControl('Mumbai'),
-    postal_address:new FormControl('Bombay'),
+    present_city:new FormControl(''),
+    present_college:new FormControl(''),
+    postal_address:new FormControl(''),
     dob:new FormControl('111'),
     cr_referral_code:new FormControl('')
-
+    
 
   })
 
@@ -77,10 +80,9 @@ export class AppComponent {
       google_id: this.gID
     })
     
-    this.http.post('http://192.168.43.245:8000/user/create',this.regForm.value,httpOptions)
+    this.http.post('https://api2.moodi.org/user/create',this.regForm.value,httpOptions)
     .subscribe(result =>
       {
-        console.log("resultS")
         document.getElementById("hidePopup").click();
         this.status=true;
         this.cdRef.detectChanges();
@@ -98,11 +100,6 @@ export class AppComponent {
   public regAlready: boolean = false;
   public target= 'none';
 
-  
-
- 
- 
-
   title = 'multicity2k19';
   public auth2:any;
   public googleInit(){
@@ -111,7 +108,7 @@ export class AppComponent {
     gapi.load('auth2',()=>{
 
       this.auth2 = gapi.auth2.init({
-        client_id: '511498944970-b2g59f8sj5h2c20vhkim5tkrpcn9sckc.apps.googleusercontent.com',
+        client_id: '753114820338-000vf1u95gdvealolff2oo7u4ohqnu3t.apps.googleusercontent.com',
         cookiepolicy: 'single_host_origin',
         scope: 'profile',
       });
@@ -122,6 +119,8 @@ export class AppComponent {
   public attachSignin(element){
     this.auth2.attachClickHandler(element, {},
       (googleUser)=> {
+
+    document.getElementById(this.elementid).click();
         let profile=googleUser.getBasicProfile();
         this.gID=profile.getId();
         this.name= profile.getName();
@@ -137,8 +136,6 @@ export class AppComponent {
 
         this.onClick();
         this.cdRef.detectChanges();
-
-    document.getElementById("ISB").click();
       });
   }
 
@@ -549,7 +546,7 @@ export class AppComponent {
   public create_team(eventid) {
     
     console.log("ok")
-    this.http.post('http://192.168.43.245:8000/team/create_team/'+this.gID, {
+    this.http.post('https://api2.moodi.org/team/create_team/'+this.gID, {
       mobile_number :"323232323",
       multicity:"2323232",
       event_id: eventid,
@@ -568,7 +565,7 @@ export class AppComponent {
 
   public add_member(number, eventid){
     console.log(number)
-    this.http.post('http://192.168.43.245:8000/team/add_member/'+this.gID, {
+    this.http.post('https://api2.moodi.org/team/add_member/'+this.gID, {
       event_id: eventid,
       member_number: number
      })
@@ -585,7 +582,7 @@ export class AppComponent {
 
   public exit_team(number, eventid){
     console.log(number)
-    this.http.post('http://192.168.43.245:8000/team/exit_team/'+this.gID, {
+    this.http.post('https://api2.moodi.org/team/exit_team/'+this.gID, {
       event_id: eventid,
       number: number
      })
@@ -602,17 +599,23 @@ export class AppComponent {
     }
 
   public my_team(eventid){
-    this.http.get('http://192.168.43.245:8000/team/is_leader/'+this.gID+"?event="+eventid)
+    this.teamno=eventid;
+    this.cdRef.detectChanges();
+    this.http.get('https://api2.moodi.org/team/is_leader/'+this.gID+"?event="+eventid)
     .subscribe(
       data => {
         this.is_leader_names=data['members']
         this.leader_names=data
         this.cdRef.detectChanges();
         },
-        error => {console.log(this.is_leader_names)}
+        error => {console.log(this.is_leader_names)
+    this.my_team_names= null
+    this.is_leader_names=null;
+    this.leader_names=null;
+        }
     )
 
-    this.http.get('http://192.168.43.245:8000/team/my_team/'+this.gID+"?event="+eventid)
+    this.http.get('https://api2.moodi.org/team/my_team/'+this.gID+"?event="+eventid)
     .subscribe(
       data1 => {
         this.my_team_names=data1['members']
@@ -624,7 +627,9 @@ export class AppComponent {
 
   }
   public go_home(id : string){
-    
+    this.elementid=id;
+
+    document.getElementById(this.elementid).click();
     document.getElementById("googleBtn").click();
 
   }
