@@ -4584,7 +4584,91 @@
 			color: white;
 			font-family: 'Staatliches', cursive;
 		}
-
-		#one .tabz{
+		#one a{
 			color: white;
+			background-color: black;
 		}
+		#one a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		#two a{
+			color: white;
+			background-color: black;
+		}
+		#two a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		#three a{
+			color: white;
+			background-color: black;
+		}
+		#three a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#four a{
+			color: white;
+			background-color: black;
+		}
+		#four a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#five a{
+			color: white;
+			background-color: black;
+		}
+		#five a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#six a{
+			color: white;
+			background-color: black;
+		}
+		#six a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#seven a{
+			color: white;
+			background-color: black;
+		}
+		#seven a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#eight a{
+			color: white;
+			background-color: black;
+		}
+		#eight a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#nine a{
+			color: white;
+			background-color: black;
+		}
+		#nine a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
+		#ten a{
+			color: white;
+			background-color: black;
+		}
+		#ten a:focus{
+			color: black;
+			background-color: crimson;
+		}
+		
