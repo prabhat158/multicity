@@ -4274,10 +4274,6 @@
 			border-color: rgba(255, 255, 255, 0.25);
 		}
 
-		#footer hr {
-			border-bottom-color: rgba(255, 255, 255, 0.25);
-		}
-
 		#footer input[type="submit"],
 		#footer input[type="reset"],
 		#footer input[type="button"],
@@ -4444,9 +4440,7 @@
 						border-top-color: rgba(255, 255, 255, 0.25);
 					}*/}
 
-		#footer table.alt tbody tr td {
-			border-color: rgba(255, 255, 255, 0.25);
-		}
+		
 
 		#footer .inner {
 			margin: 0 auto;
@@ -4494,6 +4488,10 @@
 
 		}
 
+		#banner p{
+			font-size: 20px;
+		}
+
 		@media screen and (max-width:770px){
 			.row{
 				float: left;
@@ -4534,8 +4532,59 @@
 			.col-sm-4{
 				padding: 5px;
 			}
+
+			#banner p{
+				font-size: 10px;
+			}
 		}
 
 		#rules{
 			text-align: left;
+		}
+
+		#one .modtitle, header, button{
+			color: white;
+			font-family: 'Staatliches', cursive;
+			letter-spacing: 2px;
+			font-weight: lighter;
+		}
+		#two .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#three .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#four .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#five .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#six .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#seven .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#eight .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#nine .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+		#ten .modtitle{
+			color: white;
+			font-family: 'Staatliches', cursive;
+		}
+
+		#one .tabz{
+			color: white;
 		}
