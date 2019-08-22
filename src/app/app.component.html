@@ -125,7 +125,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Thematic Dance Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_is">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_is">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_is">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_is">Register</a></li>
                   </ul>
                 
@@ -213,7 +213,7 @@
                                     </div>
                                     You are registered!<br>
                                     Team Limit: 15<br>
-                                    Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                                    Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                                 </div>
                                <br>
                               </div>
@@ -232,7 +232,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Street Dance Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_bts">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_bts">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_bts">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_bts">Register</a></li>
                   </ul>
                 
@@ -320,7 +320,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 13<br>
-                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -339,7 +339,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Hindi Solo Singing Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_mii">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_mii">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_mii">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_mii">Register</a></li>
                   </ul>
                 
@@ -356,7 +356,7 @@
                                 <button (click)="go_home('IBS3')">Get Multicity ID</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                <button (click)="create_team(teamno)">Register</button><br>
+                                <button (click)="create_team_solo(teamno)">Register</button><br>
                               
                           </div>
                           <div style="align-content: flex-end">
@@ -401,7 +401,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_aagaaz">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_aagaaz">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_aagaaz">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_aagaaz">Register</a></li>
                   </ul>
                 
@@ -489,7 +489,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 20<br>
-                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -508,7 +508,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Semi-Professional DJ Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_hys">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_hys">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_hys">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_hys">Register</a></li>
                   </ul>
                 
@@ -525,7 +525,7 @@
                                 <button (click)="go_home('ISB5')">Get Multicity ID</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                <button (click)="create_team(teamno)">Register</button><br>
+                                <button (click)="create_team_solo(teamno)">Register</button><br>
                               
                           </div>
                           <div style="align-content: flex-end">
@@ -570,7 +570,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Stand-up Comedy Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_hu">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_hu">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_hu">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_hu">Register</a></li>
                   </ul>
                 
@@ -587,7 +587,7 @@
                                   <button (click)="go_home('ISB6')">Get Multicity ID</button>
                             </div>
                             <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                                  <button (click)="create_team(teamno)">Register</button><br>
+                                  <button (click)="create_team_solo(teamno)">Register</button><br>
                                 
                             </div>
                             <div style="align-content: flex-end">
@@ -632,7 +632,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">English Solo Singing Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_sti">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_sti">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_sti">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_sti">Register</a></li>
                 </ul>
               
@@ -649,7 +649,7 @@
                               <button (click)="go_home('ISB8')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -695,7 +695,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Bollywood Dance Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_db">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_db">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_db">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_db">Register</a></li>
                   </ul>
                 
@@ -783,7 +783,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 15<br>
-                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -802,7 +802,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Personality Hunt Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_mrmsbang">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_mrmsbang">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_mrmsbang">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_mrmsbang">Register</a></li>
                 </ul>
               
@@ -819,7 +819,7 @@
                               <button (click)="go_home('IBS9')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -929,7 +929,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Personality Hunt Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_mrmskol">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_mrmskol">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_mrmskol">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_mrmskol">Register</a></li>
           </ul>
         
@@ -946,7 +946,7 @@
                         <button (click)="go_home('ISB15')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -992,7 +992,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Solo Rap Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_minem">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_minem">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_minem">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_minem">Register</a></li>
           </ul>
         
@@ -1009,7 +1009,7 @@
                         <button (click)="go_home('ISB16')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -1137,7 +1137,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Solo Classical Dance Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_nr">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_nr">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_nr">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_nr">Register</a></li>
                 </ul>
               
@@ -1154,7 +1154,7 @@
                               <button (click)="go_home('ISB19')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -1200,7 +1200,7 @@
             <p style="padding: 0; margin-top: 0; margin-bottom:0;">Solo Dance Competition</p>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#dr_mitb">Rules</a></li>
-                <li><a data-toggle="tab" href="#plyp_mitb">Queries</a></li>
+                <li><a data-toggle="tab" href="#plyp_mitb">FAQs</a></li>
                 <li><a data-toggle="tab" href="#reg_mitb">Register</a></li>
               </ul>
             
@@ -1217,7 +1217,7 @@
                             <button (click)="go_home('ISB21')">Get Multicity ID</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                            <button (click)="create_team(teamno)">Register</button><br>
+                            <button (click)="create_team_solo(teamno)">Register</button><br>
                           
                       </div>
                       <div style="align-content: flex-end">
@@ -1263,7 +1263,7 @@
           <p style="padding: 0; margin-top: 0; margin-bottom:0;">Duet Dance Competition</p>
           <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#dr_dt">Rules</a></li>
-              <li><a data-toggle="tab" href="#plyp_dt">Queries</a></li>
+              <li><a data-toggle="tab" href="#plyp_dt">FAQs</a></li>
               <li><a data-toggle="tab" href="#reg_dt">Register</a></li>
             </ul>
           
@@ -1351,7 +1351,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 2<br>
-                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -1370,7 +1370,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Solo Classical Music Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_sur">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_sur">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_sur">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_sur">Register</a></li>
           </ul>
         
@@ -1387,7 +1387,7 @@
                         <button (click)="go_home('ISB24')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -1433,7 +1433,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Mime Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_mt">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_mt">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_mt">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_mt">Register</a></li>
           </ul>
         
@@ -1521,7 +1521,7 @@
                       </div>
                       You are registered!<br>
                       Team Limit: 8<br>
-                      Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                      Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                   </div>
                  <br>
                 </div>
@@ -1540,7 +1540,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Water Colour Painting Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_rang">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_rang">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_rang">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_rang">Register</a></li>
           </ul>
         
@@ -1557,7 +1557,7 @@
                         <button (click)="go_home('ISB26')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -1603,7 +1603,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Doodling Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_ml">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_ml">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_ml">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_ml">Register</a></li>
           </ul>
         
@@ -1620,7 +1620,7 @@
                         <button (click)="go_home('ISB27')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -1666,7 +1666,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">English Solo Singing Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_stib">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_stib">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_stib">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_stib">Register</a></li>
           </ul>
         
@@ -1683,7 +1683,7 @@
                         <button (click)="go_home('ISB20')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -1729,7 +1729,7 @@
           <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Street Dance Competition</p>
           <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#dr_btsbho">Rules</a></li>
-              <li><a data-toggle="tab" href="#plyp_btsbho">Queries</a></li>
+              <li><a data-toggle="tab" href="#plyp_btsbho">FAQs</a></li>
               <li><a data-toggle="tab" href="#reg_btsbho">Register</a></li>
             </ul>
           
@@ -1817,7 +1817,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 13<br>
-                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -1895,7 +1895,7 @@
           <p style="padding: 0; margin-top: 0; margin-bottom:0;">Personality Hunt Competition</p>
           <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#dr_mrmspune">Rules</a></li>
-              <li><a data-toggle="tab" href="#plyp_mrmspune">Queries</a></li>
+              <li><a data-toggle="tab" href="#plyp_mrmspune">FAQs</a></li>
               <li><a data-toggle="tab" href="#reg_mrmspune">Register</a></li>
             </ul>
           
@@ -1912,7 +1912,7 @@
                           <button (click)="go_home('ISB33')">Get Multicity ID</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                          <button (click)="create_team(teamno)">Register</button><br>
+                          <button (click)="create_team_solo(teamno)">Register</button><br>
                         
                     </div>
                     <div style="align-content: flex-end">
@@ -1958,7 +1958,7 @@
           <p style="padding: 0; margin-top: 0; margin-bottom:0;">English Slam Poetry Competition</p>
           <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#dr_ps">Rules</a></li>
-              <li><a data-toggle="tab" href="#plyp_ps">Queries</a></li>
+              <li><a data-toggle="tab" href="#plyp_ps">FAQs</a></li>
               <li><a data-toggle="tab" href="#reg_ps">Register</a></li>
             </ul>
           
@@ -2093,7 +2093,7 @@
               <h4 class="modtitle">MR. & MS. MI</h4>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_mrmsmi">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_mrmsmi">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_mrmsmi">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_mrmsmi">Register</a></li>
                 </ul>
               
@@ -2120,7 +2120,7 @@
               <h4 class="modtitle">MR. & MS. MI</h4>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_mrmsmin">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_mrmsmin">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_mrmsmin">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_mrmsmin">Register</a></li>
                 </ul>
               
@@ -2137,7 +2137,7 @@
                               <button (click)="go_home('ISB44')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -2183,7 +2183,7 @@
             <p style="padding: 0; margin-top: 0; margin-bottom:0;">Hindi Solo Singing Competition</p>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#dr_miin">Rules</a></li>
-                <li><a data-toggle="tab" href="#plyp_miin">Queries</a></li>
+                <li><a data-toggle="tab" href="#plyp_miin">FAQs</a></li>
                 <li><a data-toggle="tab" href="#reg_miin">Register</a></li>
               </ul>
             
@@ -2200,7 +2200,7 @@
                             <button (click)="go_home('ISB39')">Get Multicity ID</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                            <button (click)="create_team(teamno)">Register</button><br>
+                            <button (click)="create_team_solo(teamno)">Register</button><br>
                           
                       </div>
                       <div style="align-content: flex-end">
@@ -2246,7 +2246,7 @@
           <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Dance Competition</p>
           <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#dr_dbn">Rules</a></li>
-              <li><a data-toggle="tab" href="#plyp_dbn">Queries</a></li>
+              <li><a data-toggle="tab" href="#plyp_dbn">FAQs</a></li>
               <li><a data-toggle="tab" href="#reg_dbn">Register</a></li>
             </ul>
           
@@ -2334,7 +2334,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 15<br>
-                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -2353,7 +2353,7 @@
           <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
           <ul class="nav nav-tabs">
               <li class="active"><a data-toggle="tab" href="#dr_aagaazn">Rules</a></li>
-              <li><a data-toggle="tab" href="#plyp_aagaazn">Queries</a></li>
+              <li><a data-toggle="tab" href="#plyp_aagaazn">FAQs</a></li>
               <li><a data-toggle="tab" href="#reg_aagaazn">Register</a></li>
             </ul>
           
@@ -2441,7 +2441,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 20<br>
-                        Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -2516,7 +2516,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Personality Hunt Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_mrmsdel">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_mrmsdel">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_mrmsdel">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_mrmsdel">Register</a></li>
           </ul>
         
@@ -2533,7 +2533,7 @@
                         <button (click)="go_home('ISB53')">Get Multicity ID</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                        <button (click)="create_team(teamno)">Register</button><br>
+                        <button (click)="create_team_solo(teamno)">Register</button><br>
                       
                   </div>
                   <div style="align-content: flex-end">
@@ -2579,7 +2579,7 @@
         <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Acapella Competition</p>
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#dr_con">Rules</a></li>
-            <li><a data-toggle="tab" href="#plyp_con">Queries</a></li>
+            <li><a data-toggle="tab" href="#plyp_con">FAQs</a></li>
             <li><a data-toggle="tab" href="#reg_con">Register</a></li>
           </ul>
         
@@ -2667,7 +2667,7 @@
                       </div>
                       You are registered!<br>
                       Team Limit: 23<br>
-                      Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                      Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                   </div>
                  <br>
                 </div>
@@ -2760,7 +2760,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Mono-Acting Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_tco">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_tco">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_tco">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_tco">Register</a></li>
                 </ul>
               
@@ -2777,7 +2777,7 @@
                               <button (click)="go_home('ISB58')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -2823,7 +2823,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Dance Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_dbj">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_dbj">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_dbj">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_dbj">Register</a></li>
                 </ul>
               
@@ -2911,7 +2911,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -2930,7 +2930,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Hindi Solo Singing Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_miij">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_miij">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_miij">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_miij">Register</a></li>
                 </ul>
               
@@ -2947,7 +2947,7 @@
                               <button (click)="go_home('ISB57')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -2993,7 +2993,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Stand-up Comedy Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_huj">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_huj">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_huj">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_huj">Register</a></li>
                 </ul>
               
@@ -3010,7 +3010,7 @@
                               <button (click)="go_home('ISB63')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -3056,7 +3056,7 @@
             <p style="padding: 0; margin-top: 0; margin-bottom:0;">English Solo Singing Competition</p>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#dr_stij">Rules</a></li>
-                <li><a data-toggle="tab" href="#plyp_stij">Queries</a></li>
+                <li><a data-toggle="tab" href="#plyp_stij">FAQs</a></li>
                 <li><a data-toggle="tab" href="#reg_stij">Register</a></li>
               </ul>
             
@@ -3073,7 +3073,7 @@
                             <button (click)="go_home('ISB62')">Get Multicity ID</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                            <button (click)="create_team(teamno)">Register</button><br>
+                            <button (click)="create_team_solo(teamno)">Register</button><br>
                           
                       </div>
                       <div style="align-content: flex-end">
@@ -3119,7 +3119,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_aagaazj">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_aagaazj">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_aagaazj">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_aagaazj">Register</a></li>
                 </ul>
               
@@ -3207,7 +3207,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 20<br>
-                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3283,7 +3283,7 @@
                 <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#dr_aagaazbhu">Rules</a></li>
-                    <li><a data-toggle="tab" href="#plyp_aagaazbhu">Queries</a></li>
+                    <li><a data-toggle="tab" href="#plyp_aagaazbhu">FAQs</a></li>
                     <li><a data-toggle="tab" href="#reg_aagaazbhu">Register</a></li>
                   </ul>
                 
@@ -3371,7 +3371,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 20<br>
-                              Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -3390,7 +3390,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Dance Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_dbbhu">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_dbbhu">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_dbbhu">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_dbbhu">Register</a></li>
                 </ul>
               
@@ -3478,7 +3478,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3497,7 +3497,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Solo Singing Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_miibhu">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_miibhu">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_miibhu">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_miibhu">Register</a></li>
                 </ul>
               
@@ -3514,7 +3514,7 @@
                               <button (click)="go_home('ISB65')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -3599,7 +3599,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Streetplay Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_aagaazch">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_aagaazch">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_aagaazch">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_aagaazch">Register</a></li>
                 </ul>
               
@@ -3687,7 +3687,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 6<br>
-                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3706,7 +3706,7 @@
             <p style="padding: 0; margin-top: 0; margin-bottom:0;">Stand-up Comedy Competition</p>
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#dr_huch">Rules</a></li>
-                <li><a data-toggle="tab" href="#plyp_huch">Queries</a></li>
+                <li><a data-toggle="tab" href="#plyp_huch">FAQs</a></li>
                 <li><a data-toggle="tab" href="#reg_huch">Register</a></li>
               </ul>
             
@@ -3723,7 +3723,7 @@
                             <button (click)="go_home('ISB75')">Get Multicity ID</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                            <button (click)="create_team(teamno)">Register</button><br>
+                            <button (click)="create_team_solo(teamno)">Register</button><br>
                           
                       </div>
                       <div style="align-content: flex-end">
@@ -3769,7 +3769,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Group Bollywood Dance Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_dbch">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_dbch">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_dbch">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_dbch">Register</a></li>
                 </ul>
               
@@ -3857,7 +3857,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3876,7 +3876,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Solo Singing Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_miich">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_miich">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_miich">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_miich">Register</a></li>
                 </ul>
               
@@ -3893,7 +3893,7 @@
                               <button (click)="go_home('ISB69')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
@@ -3939,7 +3939,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Short Film Making Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_dc">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_dc">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_dc">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_dc">Register</a></li>
                 </ul>
               
@@ -4027,7 +4027,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 12<br>
-                            Contact Kanav(7700903058) or Atharva(7021760392) in case you are not the Team Leader<br>
+                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -4100,7 +4100,7 @@
               <p style="padding: 0; margin-top: 0; margin-bottom:0;">Personality Hunt Competition</p>
               <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#dr_mrmsmum">Rules</a></li>
-                  <li><a data-toggle="tab" href="#plyp_mrmsmum">Queries</a></li>
+                  <li><a data-toggle="tab" href="#plyp_mrmsmum">FAQs</a></li>
                   <li><a data-toggle="tab" href="#reg_mrmsmum">Register</a></li>
                 </ul>
               
@@ -4117,7 +4117,7 @@
                               <button (click)="go_home('ISB77')">Get Multicity ID</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                              <button (click)="create_team(teamno)">Register</button><br>
+                              <button (click)="create_team_solo(teamno)">Register</button><br>
                             
                         </div>
                         <div style="align-content: flex-end">
