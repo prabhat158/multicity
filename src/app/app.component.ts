@@ -283,7 +283,7 @@ export class AppComponent {
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Usage of props is allowed. These have to be brought by the teams themselves but the organizers hold the discretion of allowing it on stage.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The losses/damage to the props is not the responsibility of organisers and will be heavily penalised.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Teams are STRICTLY prohibited from mentioning their college names during the performance by any medium. Any team doing so will be awarded high penalty.</span></li>
-  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Pre-recorded music should be mailed by latest 2 days before the Multicity Eliminations to desibeats@moodi.org with Subject &ldquo;</span><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">City Name&rsquo; Multicity -Team Leader&rsquo;s Name-Desi Beats</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">&rdquo;</span></li>
+  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Pre-recorded music should be mailed by latest 2 days before the Multicity Eliminations to desibeats@moodi.org with Subject &ldquo;</span><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">City Name Multicity -Team Leader&rsquo;s Name-Desi Beats</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">&rdquo;</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The soundtrack should also be brought in a pen drive (in .mp3 format only) during Multicity.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Any kind of fluid, flame, powders, glitters, heavy or sharp objects or any material which has the possibility of tampering/damaging the stage are STRICTLY not allowed.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Vulgarity and obscenity at any point is strictly not allowed. It can lead to immediate disqualification. Songs should be chosen accordingly.</span></li>
@@ -329,7 +329,7 @@ export class AppComponent {
   <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">Finals</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> : To be held during Mood Indigo 2019</span></p>
   <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">General Rules</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">:</span></p>
   <ol>
-  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Participants are required to fill the form and submit an online track entry of 4-10 minutes.&nbsp;</span></li>
+  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Participants are required to register and submit an online track entry of 4-10 minutes at hysteria@moodi.org latest by 3 days before the Multicity.&nbsp;</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> In Multicity, participants would be given a slot of 11 minutes each (setup+ track length) for their performance.&nbsp;</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> All Contestants are expected to carry their own Music (Pen Drives or CDs) &amp; Headphones with converter pin/jack.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Participants cannot Plug in any other musical instruments/devices to the existing DJ Setup during their performance.</span></li>
@@ -372,7 +372,7 @@ export class AppComponent {
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Teams are STRICTLY prohibited from mentioning their college names during the performance by any medium.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Usage of props is allowed. These have to be brought by the teams themselves but the organizers hold the discretion of allowing it on stage.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The losses/damage to the props is not the responsibility of organisers.</span></li>
-  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Pre-recorded music should be mailed by latest 2 days before the Multicity Eliminations to indigosaga@moodi.org with Subject &ldquo;</span><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">City Name&rsquo; Multicity -Team Leader&rsquo;s Name-</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><strong>Indigo Saga</strong>&rdquo;.</span></li>
+  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Pre-recorded music should be mailed by latest 2 days before the Multicity Eliminations to indigosaga@moodi.org with Subject &ldquo;</span><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">City Name Multicity -Team Leader&rsquo;s Name-</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><strong>Indigo Saga</strong>&rdquo;.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The soundtrack should also be brought in a pen drive (in .mp3 format only) during Multicity.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Any kind of fluid, flame, powders, glitters, heavy or sharp objects or any material which has the possibility of tampering/damaging the stage is STRICTLY not allowed.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Vulgarity and obscenity at any point are strictly not allowed. It can lead to immediate disqualification.Songs to be chosen accordingly.</span></li>
@@ -447,9 +447,9 @@ export class AppComponent {
   <p style="line-height: 1.38; text-align: center; margin-top: 0pt; margin-bottom: 0pt;"></p>
   <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">General Rules</span></strong><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">:</span></p>
   <ol>
-  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Fill the form and submit an online entry of 1-3 minutes of talent display in any genre (dancing, singing, debating, standup, etc.) to participate.</span></li>
+  <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Register and submit an online entry of 1-3 minutes of talent display in any genre (dancing, singing, debating, standup, etc.) to participate.</span></li>
   </ol>
-  <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Send the video or Google drive link to </span><a style="text-decoration: none;" href="mailto:janhvi@moodi.org"><span style="font-size: 10pt; font-family: Arial; color: #1155cc; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">janhvi@moodi.org</span></a><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> latest by 5 days before the Multicity.</span></p>
+  <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Send the video or Google drive link to </span><a style="text-decoration: none;" href="mailto:mrnmsmi@moodi.org"><span style="font-size: 10pt; font-family: Arial; color: #1155cc; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">mrnmsmi@moodi.org</span></a><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> latest by 5 days before the Multicity.</span></p>
   <ol start="2">
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Multicity will consist of 2 rounds, first round will be the talent display round, where your performance should be in the same genre as your video entry. The second round will be a personality round where the participant would be asked a question or asked to speak about a topic for less than 2 minutes.</span></li>
   <li><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Tracks to be played in the background have to be submitted to and approved by Mood Indigo atleast 48 hours before the competition.</span></li>
@@ -518,11 +518,10 @@ export class AppComponent {
   <p style="line-height: 1.38; margin-left: 4.5pt; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt; font-family: Arial; color: #000000; background-color: #ffffff; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"></span></p>`;
 
   mqueries = `<b>What about the eliminations of other competitions?</b><br>
-  <p>Eliminations to all other competitions will be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
+  <p>Eliminations to all other competitions will be conducted online or during Mood Indigo. Follow our <a target="blank" href="https://www.facebook.com/iitb.moodindigo/"> Facebook page</a> and <a target="blank" href="https://www.instagram.com/iitbombay.moodi/"> Instagram page</a> for regular updates.</p>
 
   <b>There is no Multicity in my city. How can I participate?</b><br>
-  <p>Eliminations will either be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
-
+  <p>Eliminations will either be conducted online or during Mood Indigo. Follow our <a target="blank" href="https://www.facebook.com/iitb.moodindigo/"> Facebook page</a> and <a target="blank" href="https://www.instagram.com/iitbombay.moodi/"> Instagram page</a> for regular updates.</p>
   <b>Who can participate in these competitions?</b><br>
   <p>Any college student can take part in these competitions. There is no registration fee for participation.</p>
 
@@ -530,10 +529,10 @@ export class AppComponent {
   <p>1 college team from every city shall be crowned 'Multicity Champion' based on level of their performances.</p>
 
   <b>Are on-spot registrations allowed?</b><br>
-  <p>It is advised that you register in advance to confirm your slot as there are limited slots available</p>
+  <p>It is advised that you register in advance to confirm your slot as there are limited slots available.</p>
   
   <b>Can I participate in these competitions directly during Mood Indigo?</b><br>
-  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. Getting a slot on-ground for these cities will be very difficult.</p>`;
+  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. It will be difficult for the colleges of the Multicity cities to get a slot on-ground for the respective competitions during Mood Indigo.</p>`;
 
   hqueries = `<b>What about the eliminations of other competitions?</b><br>
   <p>Eliminations to all other competitions will be conducted online or during Mood Indigo. Follow our Facebook page facebook.com/iitb.moodindigo/ and Instagram page https://www.instagram.com/iitbombay.moodi/ for regular updates.</p>
@@ -548,12 +547,15 @@ export class AppComponent {
   <p>No.</p>
   
   <b>Can I participate in these competitions directly during Mood Indigo?</b><br>
-  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. Getting a slot on-ground for these cities will be very difficult.</p>`;
+  <p>If there is a Multicity happening in your city, it is advised that you participate in the Multicity eliminations itself. It will be difficult for the colleges of the Multicity cities to get a slot on-ground for the respective competitions during Mood Indigo.</p>`;
   // ***********************************************************************************************
 
   public create_team(eventid) {
-    
-    console.log("ok")
+
+  var r = window.confirm("Don't create the team if you are not the Team Leader.\nAre you sure you are the Team Leader?");
+  if (r == false) {
+    return
+  } 
     this.http.post('https://api2.moodi.org/team/create_team/'+this.gID, {
       mobile_number :"323232323",
       multicity:"2323232",
@@ -570,6 +572,24 @@ export class AppComponent {
       }
     );
   }
+
+  public create_team_solo(eventid) {
+      this.http.post('https://api2.moodi.org/team/create_team/'+this.gID, {
+        mobile_number :"323232323",
+        multicity:"2323232",
+        event_id: eventid,
+       })
+        .subscribe(result =>
+        {
+        this.my_team(eventid)
+        },
+        error => {
+        alert(error["error"]["detail"])
+        },
+        () => {
+        }
+      );
+    }
 
   public add_member(number, eventid){
     console.log(number)
