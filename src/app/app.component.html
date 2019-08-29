@@ -89,7 +89,7 @@
                   <p>Name: {{profile?.name}}</p>
                   <p>Mobile: {{profile?.mobile_number}}</p>
                   <p>Email-ID: {{profile?.email}}</p>
-                  <p>Multicity-ID: {{profile?.id}}</p>
+                  <!-- <p>Multicity-ID: {{profile?.id}}</p> -->
                   <button id="ISB" type="button" class="button alt" data-dismiss="modal">Close</button>
                 </div>
           </div>
@@ -107,7 +107,7 @@
           transform: translate(0%,2vh);
           width: 50%;
           border: 0.5px solid darkgrey;"
-          >Get your Multicity-ID</button>
+          >Google Sign-in</button>
           <button id="openFormButton" [hidden]="true" data-toggle="modal" data-target="#reg-form"></button>
           <button id="openProfileButton" [hidden]="true" data-toggle="modal" data-target="#reg-profile"></button>
         </header>
@@ -139,7 +139,7 @@
                     <div id="reg_is" class="tab-pane fade">
                             <div class="tabbody">
                                 <div *ngIf="status ==false">
-                                      <button (click)="go_home('IBS')">Get Multicity ID</button>
+                                      <button (click)="go_home('IBS')">Google Sign-in</button>
                                 </div>
                                 <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                       <button (click)="create_team(teamno)">create team</button><br>
@@ -213,7 +213,7 @@
                                     </div>
                                     You are registered!<br>
                                     Team Limit: 15<br>
-                                    Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                                    Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                                 </div>
                                <br>
                               </div>
@@ -246,7 +246,7 @@
                     <div id="reg_bts" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('IBS2')">Get Multicity ID</button>
+                                <button (click)="go_home('IBS2')">Google Sign-in</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team(teamno)">create team</button><br>
@@ -320,7 +320,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 13<br>
-                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                              Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -353,7 +353,7 @@
                     <div id="reg_mii" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('IBS3')">Get Multicity ID</button>
+                                <button (click)="go_home('IBS3')">Google Sign-in</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -415,7 +415,7 @@
                     <div id="reg_aagaaz" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('IBS4')">Get Multicity ID</button>
+                                <button (click)="go_home('IBS4')">Google Sign-in</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team(teamno)">create team</button><br>
@@ -489,7 +489,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 20<br>
-                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                              Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -522,7 +522,7 @@
                     <div id="reg_hys" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('ISB5')">Get Multicity ID</button>
+                                <button (click)="go_home('ISB5')">Google Sign-in</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -584,7 +584,7 @@
                     <div id="reg_hu" class="tab-pane fade">
                         <div class="tabbody">
                             <div *ngIf="status ==false">
-                                  <button (click)="go_home('ISB6')">Get Multicity ID</button>
+                                  <button (click)="go_home('ISB6')">Google Sign-in</button>
                             </div>
                             <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                   <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -646,7 +646,7 @@
                   <div id="reg_sti" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB8')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB8')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -709,7 +709,7 @@
                     <div id="reg_db" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('ISB7')">Get Multicity ID</button>
+                                <button (click)="go_home('ISB7')">Google Sign-in</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team(teamno)">create team</button><br>
@@ -783,7 +783,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 15<br>
-                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                              Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -816,7 +816,7 @@
                   <div id="reg_mrmsbang" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('IBS9')">Get Multicity ID</button>
+                              <button (click)="go_home('IBS9')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -943,7 +943,7 @@
             <div id="reg_mrmskol" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB15')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB15')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1006,7 +1006,7 @@
             <div id="reg_minem"class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB16')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB16')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1151,7 +1151,7 @@
                   <div id="reg_nr" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB19')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB19')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1214,7 +1214,7 @@
                 <div id="reg_mitb" class="tab-pane fade">
                   <div class="tabbody">
                       <div *ngIf="status ==false">
-                            <button (click)="go_home('ISB21')">Get Multicity ID</button>
+                            <button (click)="go_home('ISB21')">Google Sign-in</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                             <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1277,7 +1277,7 @@
               <div id="reg_dt" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('ISB22')">Get Multicity ID</button>
+                          <button (click)="go_home('ISB22')">Google Sign-in</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                           <button (click)="create_team(teamno)">create team</button><br>
@@ -1351,7 +1351,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 2<br>
-                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                        Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -1384,7 +1384,7 @@
             <div id="reg_sur" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB24')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB24')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1447,7 +1447,7 @@
             <div id="reg_mt" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB25')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB25')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team(teamno)">create team</button><br>
@@ -1521,7 +1521,7 @@
                       </div>
                       You are registered!<br>
                       Team Limit: 8<br>
-                      Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                      Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                   </div>
                  <br>
                 </div>
@@ -1554,7 +1554,7 @@
             <div id="reg_rang" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB26')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB26')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1617,7 +1617,7 @@
             <div id="reg_ml" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB27')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB27')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1680,7 +1680,7 @@
             <div id="reg_stib" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB20')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB20')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1743,7 +1743,7 @@
               <div id="reg_btsbho" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('IBS23')">Get Multicity ID</button>
+                          <button (click)="go_home('IBS23')">Google Sign-in</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                           <button (click)="create_team(teamno)">create team</button><br>
@@ -1817,7 +1817,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 13<br>
-                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                        Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -1909,7 +1909,7 @@
               <div id="reg_mrmspune" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('ISB33')">Get Multicity ID</button>
+                          <button (click)="go_home('ISB33')">Google Sign-in</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                           <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -1972,10 +1972,10 @@
               <div id="reg_ps" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('IBS10')">Get Multicity ID</button>
+                          <button (click)="go_home('IBS10')">Google Sign-in</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
-                          <button  (click)="create_team(teamno)">Register</button><br>
+                          <button  (click)="create_team_solo(teamno)">Register</button><br>
                         
                     </div>
                     <div style="align-content: flex-end">
@@ -2134,7 +2134,7 @@
                   <div id="reg_mrmsmin" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB44')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB44')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -2197,7 +2197,7 @@
                 <div id="reg_miin" class="tab-pane fade">
                   <div class="tabbody">
                       <div *ngIf="status ==false">
-                            <button (click)="go_home('ISB39')">Get Multicity ID</button>
+                            <button (click)="go_home('ISB39')">Google Sign-in</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                             <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -2260,7 +2260,7 @@
               <div id="reg_dbn" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('ISB42')">Get Multicity ID</button>
+                          <button (click)="go_home('ISB42')">Google Sign-in</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                           <button (click)="create_team(teamno)">create team</button><br>
@@ -2334,7 +2334,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 15<br>
-                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                        Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -2367,7 +2367,7 @@
               <div id="reg_aagaazn" class="tab-pane fade">
                 <div class="tabbody">
                     <div *ngIf="status ==false">
-                          <button (click)="go_home('IBS37')">Get Multicity ID</button>
+                          <button (click)="go_home('IBS37')">Google Sign-in</button>
                     </div>
                     <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                           <button (click)="create_team(teamno)">create team</button><br>
@@ -2441,7 +2441,7 @@
                         </div>
                         You are registered!<br>
                         Team Limit: 20<br>
-                        Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                        Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                     </div>
                    <br>
                   </div>
@@ -2530,7 +2530,7 @@
             <div id="reg_mrmsdel" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB53')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB53')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -2593,7 +2593,7 @@
             <div id="reg_con" class="tab-pane fade">
               <div class="tabbody">
                   <div *ngIf="status ==false">
-                        <button (click)="go_home('ISB55')">Get Multicity ID</button>
+                        <button (click)="go_home('ISB55')">Google Sign-in</button>
                   </div>
                   <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                         <button (click)="create_team(teamno)">create team</button><br>
@@ -2667,7 +2667,7 @@
                       </div>
                       You are registered!<br>
                       Team Limit: 23<br>
-                      Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                      Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                   </div>
                  <br>
                 </div>
@@ -2774,7 +2774,7 @@
                   <div id="reg_tco" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB58')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB58')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -2837,7 +2837,7 @@
                   <div id="reg_dbj" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB59')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB59')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -2911,7 +2911,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                            Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -2944,7 +2944,7 @@
                   <div id="reg_miij" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB57')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB57')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -3007,7 +3007,7 @@
                   <div id="reg_huj" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB63')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB63')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -3070,7 +3070,7 @@
                 <div id="reg_stij" class="tab-pane fade">
                   <div class="tabbody">
                       <div *ngIf="status ==false">
-                            <button (click)="go_home('ISB62')">Get Multicity ID</button>
+                            <button (click)="go_home('ISB62')">Google Sign-in</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                             <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -3133,7 +3133,7 @@
                   <div id="reg_aagaazj" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('IBS60')">Get Multicity ID</button>
+                              <button (click)="go_home('IBS60')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -3207,7 +3207,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 20<br>
-                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                            Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3297,7 +3297,7 @@
                     <div id="reg_aagaazbhu" class="tab-pane fade">
                       <div class="tabbody">
                           <div *ngIf="status ==false">
-                                <button (click)="go_home('IBS68')">Get Multicity ID</button>
+                                <button (click)="go_home('IBS68')">Google Sign-in</button>
                           </div>
                           <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                                 <button (click)="create_team(teamno)">create team</button><br>
@@ -3371,7 +3371,7 @@
                               </div>
                               You are registered!<br>
                               Team Limit: 20<br>
-                              Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                              Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                           </div>
                          <br>
                         </div>
@@ -3404,7 +3404,7 @@
                   <div id="reg_dbbhu"class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB67')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB67')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -3478,7 +3478,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                            Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3511,7 +3511,7 @@
                   <div id="reg_miibhu" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB65')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB65')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -3613,7 +3613,7 @@
                   <div id="reg_aagaazch" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB72')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB72')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -3687,7 +3687,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 6<br>
-                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                            Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3720,7 +3720,7 @@
                 <div id="reg_huch" class="tab-pane fade">
                   <div class="tabbody">
                       <div *ngIf="status ==false">
-                            <button (click)="go_home('ISB75')">Get Multicity ID</button>
+                            <button (click)="go_home('ISB75')">Google Sign-in</button>
                       </div>
                       <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                             <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -3783,7 +3783,7 @@
                   <div id="reg_dbch" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB71')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB71')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -3857,7 +3857,7 @@
                             </div>
                             You are registered!<br>
                             Team Limit: 15<br>
-                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                            Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -3890,7 +3890,7 @@
                   <div id="reg_miich" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB69')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB69')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
@@ -3953,7 +3953,7 @@
                   <div id="reg_dc" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB74')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB74')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team(teamno)">create team</button><br>
@@ -4025,9 +4025,9 @@
                                     <button (click)="add_member(myInput.value,teamno)" class="btn btn-default" style="background: brown; margin-left: 10px" type="button">Add member</button>
                                 </span>
                             </div>
-                            You are registered!<br>
+                            You are registered!<br> 
                             Team Limit: 12<br>
-                            Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Team Leader can add Team Members only when the team members have made their Multicity IDs<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
+                            Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Team Leader can add Team Members only when the team members have google signed-in on our website<br>Team Leader will not be able to add Team Members who have created the team<br>Contact Kanav(7700903058) or Atharva(7021760392) in case of any issues<br>
                         </div>
                        <br>
                       </div>
@@ -4114,7 +4114,7 @@
                   <div id="reg_mrmsmum" class="tab-pane fade">
                     <div class="tabbody">
                         <div *ngIf="status ==false">
-                              <button (click)="go_home('ISB77')">Get Multicity ID</button>
+                              <button (click)="go_home('ISB77')">Google Sign-in</button>
                         </div>
                         <div *ngIf="status ==true && is_leader_names == undefined && my_team_names ==undefined">
                               <button (click)="create_team_solo(teamno)">Register</button><br>
