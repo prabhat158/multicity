@@ -595,6 +595,7 @@ export class AppComponent {
     console.log(number)
     this.http.post('https://api2.moodi.org/team/add_member/'+this.gID, {
       event_id: eventid,
+      multicity:"YES",
       member_number: number
      })
       .subscribe(result =>{
@@ -612,6 +613,7 @@ export class AppComponent {
     console.log(number)
     this.http.post('https://api2.moodi.org/team/exit_team/'+this.gID, {
       event_id: eventid,
+      multicity:"YES",
       number: number
      })
       .subscribe(result =>{
@@ -629,7 +631,7 @@ export class AppComponent {
   public my_team(eventid){
     this.teamno=eventid;
     this.cdRef.detectChanges();
-    this.http.get('https://api2.moodi.org/team/is_leader/'+this.gID+"?event="+eventid)
+    this.http.get('https://api2.moodi.org/team/is_leader/'+this.gID+"?event="+eventid+"&multicity=YES")
     .subscribe(
       data => {
         this.is_leader_names=data['members']
@@ -643,7 +645,7 @@ export class AppComponent {
         }
     )
 
-    this.http.get('https://api2.moodi.org/team/my_team/'+this.gID+"?event="+eventid)
+    this.http.get('https://api2.moodi.org/team/my_team/'+this.gID+"?event="+eventid+"&multicity=YES")
     .subscribe(
       data1 => {
         this.my_team_names=data1['members']
